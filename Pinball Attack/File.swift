@@ -30,7 +30,7 @@ class Pinball {
 				.fillColor = SKColor.blueColor();_=node
 					.physicsBody = SKPhysicsBody(circleOfRadius: self.radius)
 		
-				scene.addChild(self.node)
+		scene.addChild(self.node)
 
 		//let sprite = scene.childNodeWithName("sprite")
 	}
