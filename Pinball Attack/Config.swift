@@ -47,3 +47,9 @@ struct ConPhy {
 extension SKScene {
 	var center: CGPoint { get { return CGPoint(x: self.frame.midX, y: self.frame.midY) } }
 }
+
+extension SKNode {
+	func fullStop() {
+		FullStopHandler.stop(self) // make a lsit
+	}
+}

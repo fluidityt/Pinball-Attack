@@ -230,24 +230,14 @@ class GameScene: SKScene {
 	}
 	
 	override func update(currentTime: CFTimeInterval){
+		FullStopHandler.handle() // NEEDS TESTING // issue could be if a big force is applied in between frames
+		
 		let n = ball?.node;	if n?.position.y >= self.frame.maxY {	n?.position = self.center	}
 		counter += 1; if counter >= 60 { seconds += 1; counter = 0 }
 
-		func fullStop() {
-			if seconds >= 4 {
-				n?.physicsBody?.pinned = true
-				
-				n?.physicsBody?.pinned = false
-				seconds = 0
-			}
-		}
-		fullStop()
+		if seconds >= 4 { n?.fullStop(); seconds = 0 }
 		
-		struct FullStopHandler { typealias this = FullStopHandler
-			static var resume_on: Int = 0
-			static var stopped_on: Int = 0 { didSet { this.resume_on = (this.stopped_on + 1) } }
-		}
-
+		JUNK: do {
 		/* seconds: ;{
 		label.text = "seconds: \(seconds), taps: \(taps)";	if seconds == 4		{
 			n?.physicsBody?.pinned = false
@@ -265,10 +255,30 @@ class GameScene: SKScene {
 				ball!.node.position = self.center
 			}
 		} */
+			}
 	}
 }
 
+// Update() globes:
 var taps = 0
 var label = SKLabelNode(text: "0")
 var counter = 0
 var seconds = 0
+
+struct FullStopHandler { typealias this = FullStopHandler
+	// I may need the stopped-on property
+	static var node_array = [SKNode]()
+	
+	static func handle() {
+		if node_array.count > 0 {
+			for node in node_array {
+				node.physicsBody?.pinned = false
+			}
+		}
+	}
+	
+	static func stop(node: SKNode) {
+		node_array.append(node)
+		node.physicsBody?.pinned = true
+	}
+}
