@@ -11,12 +11,16 @@ import SpriteKit
 
 // GLOBAL:
 var gScene: SKScene?
+var gView:	SKView?
+
 
 class Flipper: SKSpriteNode {
 	static func notes() {
 	// FLipper size is 1/4 of width
 	}
+	
 	static let scene = gScene
+	static let view = gView
 	
 	// Enums:
 	enum Flip {
@@ -44,6 +48,7 @@ class Flipper: SKSpriteNode {
 	init(side: Flip.Side, player: Flip.Player) {
 
 		let scene = Flipper.scene!
+		let view 	= Flipper.view!
 		
 		self.side = side
 		self.player = player
@@ -51,49 +56,96 @@ class Flipper: SKSpriteNode {
 		self.power = .low
 		
 		let swidth = scene.frame.maxX / 4
-		let sheight = swidth / 3
+		let sheight = swidth / 5
 		
 		super.init(texture: SKTexture(),
 		           color: SKColor.blueColor(),
 		           size: CGSize(width: swidth, height: sheight))
 		
 		// Find anchorpoint:
-		switch side {
-			case .left:
-				self.anchorPoint.x = 2
-			case .right:
-				()
+		switch player {
+			case .bottom:
+				switch side {
+					case .left:
+						self.anchorPoint.x = frame.minX
+						self.anchorPoint.y = frame.midY
+					case .right:
+						self.anchorPoint.x = frame.maxX
+						self.anchorPoint.y = frame.midY
+				}
+			
+			case .top: ()
 		}
-	};required init?(coder aDecoder: NSCoder) {		fatalError("init(coder:) has not been implemented")	}
+	
+		// Find position:
+		switch player {
+			case .bottom:
+				switch side {
+					case .left:
+						self.position = view.center
+						self.position.x -= self.frame.width
+					case .right:
+						self.position = view.center
+						self.position.y += self.frame.width
+				}
+			case .top: ()
+		}
+		
+		// Add to scene
+		scene.addChild(self)
+			
+		};required init?(coder aDecoder: NSCoder) {		fatalError("init(coder:) has not been implemented")	}
 }
+
 
 struct Player {
 	
-	static let scene = gScene
+	// static let scene = gScene
 	
 	let flipper: (left: Flipper, right: Flipper)
 	
 	var score: Int
 	
+	func position(xy: CGPoint) {
+		flipper.left.position = xy
+			flipper.right.position.x = flipper.left.frame.maxX
+			flipper.right.position.y = flipper.left.frame.maxY
+	}
+	
 	init(player: Flipper.Flip.Player) {
 		self.flipper.left = Flipper(side: .left, player: player)
 		self.flipper.right = Flipper(side: .right, player: player)
-		
 		self.score = 0
 	}
 }
 
+
+private var player: (top: Player, bottom: Player)? = nil
+
+
 class GameScene: SKScene {
 	
-	var player = (top: Player(player: .top), bottom: Player(player: .bottom))
 	
 	override func didMoveToView(view: SKView) {
+	
 		gScene = self
+		gView = view
+		
+		self.size = CGSize(width: view.frame.width, height: view.frame.height)
+		self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+		
+		let flipperLeft = Flipper(side: .left, player: .bottom)
+		let flipperRight = Flipper(side: .right, player: .bottom)
+		//player = (top: Player(player: .top), bottom: Player(player: .bottom))
 	}
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+	
 		for touch in touches {
-			_ = touch.locationInNode(self)
+			let tloc = touch.locationInNode(self)
+			
+			print(tloc)
+			//player?.bottom.position(tloc)
 		}
 	}
 	
