@@ -14,6 +14,16 @@ var gScene: SKScene?
 var gView:	SKView?
 
 // ***************************** \\
+class Pinball {
+	// Sudden death round is ultra-multiball madness!
+	
+	let radius: CGFloat // Diameter
+
+	init(radius: CGFloat) {
+		self.radius = radius
+	}
+}
+// ***************************** \\
 class Flipper: SKSpriteNode {
 	
 	required init?(coder aDecoder: NSCoder) {		fatalError("")	}
@@ -43,7 +53,7 @@ class Flipper: SKSpriteNode {
 	func flip()	{		self.state = Flip.State.up		/* Do physics stuff */	}
 	
 	// Init:
-	init(side: Flip.Side, player: Flip.Player) {
+	init(side: Flip.Side, player: Flip.Player, ball: Pinball) {
 		
 		let scene = Flipper.scene!
 		
@@ -85,7 +95,7 @@ class Flipper: SKSpriteNode {
 					case .right:
 						self.position.y = scene.frame.midY
 						self.position.x = scene.frame.midX
-						self.position.y += self.frame.width
+						self.position.x += self.frame.width
 				}
 			}
 		}
@@ -101,11 +111,11 @@ struct Player {
 	
 	var score: Int
 	
-	func position(xy: CGPoint) {
-		flipper.left.position = xy
-			flipper.right.position.x = flipper.left.frame.maxX
-			flipper.right.position.y = flipper.left.frame.maxY
-	}
+//	func position(xy: CGPoint) {
+//		flipper.left.position = xy
+//			flipper.right.position.x = flipper.left.frame.maxX
+//			flipper.right.position.y = flipper.left.frame.maxY
+//	}
 	
 	init(player: Flipper.Flip.Player) {
 		self.flipper.left = Flipper(side: .left, player: player)
@@ -141,8 +151,10 @@ class GameScene: SKScene {
 		//myFlip = flipperRight
 			}
 		
-		player?.bottom = Player(player: .bottom)
-		player?.top 	 = Player(player: .top)
+		player = (bottom:Player(player: .bottom), top: Player(player: .top))
+		//let left = Flipper(side: .left, player: .bottom)
+		//Xlet right = Flipper(side: .right, player: .bottom)
+		
 	}
 	
 	// ** \\
