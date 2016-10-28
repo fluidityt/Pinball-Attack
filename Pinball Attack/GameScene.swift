@@ -16,6 +16,7 @@ var gView:	SKView?
 
 class Flipper: SKSpriteNode {
 	
+	required init?(coder aDecoder: NSCoder) {		fatalError("")	}
 	static func notes()	{
 		// FLipper size is 1/4 of width
 	}
@@ -44,10 +45,9 @@ class Flipper: SKSpriteNode {
 	// Init:
 	init(side: Flip.Side, player: Flip.Player) {
 		
+		let scene = Flipper.scene!
+		
 		inits: do {
-			
-			let scene = Flipper.scene!
-			scene.addChild(self)
 			
 			self.side = side
 			self.player = player
@@ -60,46 +60,39 @@ class Flipper: SKSpriteNode {
 			super.init(texture: SKTexture(),
 			           color: SKColor.blueColor(),
 			           size: CGSize(width: swidth, height: sheight))
-			
+			scene.addChild(self)
 		}
 		
 		findAnchorAndPos: do {
 			// Find anchorpoint:
-			switch player {
-			case .bottom:
+			if self.player == Flip.Player.bottom {
 				switch side {
-				case .left:
-					self.anchorPoint.x = 0
-					self.anchorPoint.y = self.frame.midY
-				case .right:
-					self.anchorPoint.x = 1
-					self.anchorPoint.y = self.frame.midY
+					case .left:
+						self.anchorPoint.x = 0
+						self.anchorPoint.y = self.frame.midY
+					case .right:
+						self.anchorPoint.x = 1
+						self.anchorPoint.y = self.frame.midY
 				}
-				
-			case .top: ()
 			}
 			
+			
 			// Find position:
-			switch player {
-			case .bottom:
+			if self.player == Flip.Player.bottom {
 				switch side {
-				case .left:
-					self.position.y = scene.frame.midY
-					self.position.x = scene.frame.midX
-					self.position.x -= self.frame.width
-				case .right:
-					self.position.y = scene.frame.midY
-					self.position.x = scene.frame.midX
-					self.position.y += self.frame.width
+					case .left:
+						self.position.y = scene.frame.midY
+						self.position.x = scene.frame.midX
+						self.position.x -= self.frame.width
+					case .right:
+						self.position.y = scene.frame.midY
+						self.position.x = scene.frame.midX
+						self.position.y += self.frame.width
 				}
-			case .top: ()
 			}
 		}
-		
-	};required init?(coder aDecoder: NSCoder) {		fatalError("init(coder:) has not been implemented")	}
+	}
 }
-
-
 struct Player {
 	
 	// static let scene = gScene
