@@ -12,6 +12,7 @@ import SpriteKit
 // ***************************** \\
 var gScene: SKScene?
 var gView:	SKView?
+typealias c = Configz
 
 // ***************************** \\
 class Pinball {
@@ -22,13 +23,10 @@ class Pinball {
 		case small, normal, large
 		
 		func toRadius(scene: SKScene = Pinball.scene) -> CGFloat {
-			let sizes = (small: (scene.frame.width / 20),
-			             normal: (scene.frame.width / 15),
-			             large: (scene.frame.width  / 10))
 			switch self {
-				case .small:  return sizes.small
-				case .normal:	return sizes.normal
-				case .large:  return sizes.large
+				case .small:  return (scene.frame.width / c.small)
+				case .normal:	return (scene.frame.width / c.normal)
+				case .large:  return (scene.frame.width / c.large)
 			}
 		}
 	}
@@ -37,15 +35,13 @@ class Pinball {
 	let size: 	Pinball.Size
 	let radius: CGFloat
 
-	init(radius: CGFloat) {
+	init(size: Pinball.Size) {
 
 		// Sudden death round is ultra-multiball madness!
 		
 		//self.radius = radius
-		self.size =
+		self.size 	=
 		self.radius = Size.getSize(Pinball.Size.normal)
-		
-		
 	}
 }
 
@@ -63,7 +59,6 @@ class Flipper: SKSpriteNode {
 	enum Flip {
 		enum State { case down, up }
 		enum Side { case left, right }
-		enum Power: CGFloat {			case low = 25;			case med = 50;			case high = 75		}
 		enum Player { case top, bottom }
 	}
 	
@@ -72,7 +67,7 @@ class Flipper: SKSpriteNode {
 	let side: Flip.Side
 	
 	// MA Fields:
-	var power: Flip.Power
+	var power: CGFloat
 	var state: Flip.State
 	
 	// Methods:
@@ -88,14 +83,11 @@ class Flipper: SKSpriteNode {
 			self.side = side
 			self.player = player
 			self.state = .down
-			self.power = .low
-			
-			let swidth = scene.frame.maxX / 4
-			let sheight = swidth / 5
+			self.power = c.f.power
 			
 			super.init(texture: SKTexture(),
 			           color: SKColor.blueColor(),
-			           size: CGSize(width: swidth, height: sheight))
+			           size: CGSize(width: c.f.width,	height: c.f.height))
 			scene.addChild(self)
 		}
 		
@@ -112,8 +104,7 @@ class Flipper: SKSpriteNode {
 				}
 			}
 			// Find position:
-			let gap_factor: CGFloat = 2
-			let gap = (ball.radius * gap_factor)
+			let gap = (ball.radius * c.f.gap_factor)
 		
 			if self.player == Flip.Player.bottom {
 				switch side {
