@@ -12,36 +12,36 @@ import SpriteKit
 // ***************************** \\
 var gScene: SKScene?
 var gView:	SKView?
-typealias c = Configz
+
 
 // ***************************** \\
 class Pinball {
 	static let scene: SKScene = gScene!
+	//static let c = Configz.c.b // TODO: Memory issues
 	
 	enum Size: CGFloat {
 		
 		case small, normal, large
 		
 		func toRadius(scene: SKScene = Pinball.scene) -> CGFloat {
+			let c = ConBall()
+			
 			switch self {
-				case .small:  return (scene.frame.width / c.small)
+				case .small:  return (scene.frame.width / c.small ) 		// Config.Ball
 				case .normal:	return (scene.frame.width / c.normal)
-				case .large:  return (scene.frame.width / c.large)
+				case .large:  return (scene.frame.width / c.large )
 			}
 		}
 	}
 
 	// IA Fields:
-	let size: 	Pinball.Size
 	let radius: CGFloat
 
 	init(size: Pinball.Size) {
 
 		// Sudden death round is ultra-multiball madness!
 		
-		//self.radius = radius
-		self.size 	=
-		self.radius = Size.getSize(Pinball.Size.normal)
+		self.radius = size.toRadius()
 	}
 }
 
@@ -53,7 +53,6 @@ class Flipper: SKSpriteNode {
 		// FLipper size is 1/4 of width
 	}
 	
-	static let scene = gScene
 	
 	// Enums:
 	enum Flip {
@@ -76,18 +75,19 @@ class Flipper: SKSpriteNode {
 	// Init:
 	init(side: Flip.Side, player: Flip.Player, ball: Pinball) {
 		
-		let scene = Flipper.scene!
+		let scene = gScene!
+		let c = ConFlip()
 		
 		inits: do {
 			
 			self.side = side
 			self.player = player
 			self.state = .down
-			self.power = c.f.power
+			self.power = c.power
 			
 			super.init(texture: SKTexture(),
 			           color: SKColor.blueColor(),
-			           size: CGSize(width: c.f.width,	height: c.f.height))
+			           size: CGSize(width: c.width,	height: c.height))
 			scene.addChild(self)
 		}
 		
@@ -104,7 +104,7 @@ class Flipper: SKSpriteNode {
 				}
 			}
 			// Find position:
-			let gap = (ball.radius * c.f.gap_factor)
+			let gap = (ball.radius * c.gap_factor)
 		
 			if self.player == Flip.Player.bottom {
 				switch side {
@@ -171,7 +171,7 @@ class GameScene: SKScene {
 		//myFlip = flipperRight
 			}
 		
-		let ball = Pinball(radius: self.frame.width / 15)
+		let ball = Pinball(size: c.b.default_size)
 		
 		player = (bottom:Player(player: .bottom, ball: ball),
 		          top: Player(player: .top, ball: ball))
