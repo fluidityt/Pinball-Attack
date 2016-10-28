@@ -9,13 +9,13 @@
 import SpriteKit
 
 
-private let scene = gScene
 
+private let scene2 = gScene
 // Ball
 struct ConBall {
 	let
 	small:CGFloat = 20,
- normal:CGFloat = 15,
+	normal:CGFloat = 15,
 	large:CGFloat = 10
 	
 	let default_size: Pinball.Size = .normal
@@ -27,8 +27,8 @@ struct ConFlip {
 	
 	power = CGFloat(25), // TODO: Move this to physics
 	
-	width = CGFloat(scene!.frame.maxX / 4),
-	height = CGFloat((scene!.frame.maxX / 4)/5),
+	width = CGFloat(scene2!.frame.maxX / 4),
+	height = CGFloat((scene2!.frame.maxX / 4)/5),
 	
 	gap_factor = CGFloat(2),
 	

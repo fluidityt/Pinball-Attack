@@ -9,14 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pinball Attack/File.swift"
-            timestampString = "499351618.432119"
+            filePath = "Pinball Attack/GameScene.swift"
+            timestampString = "499352803.308991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "Pinball"
-            landmarkType = "3">
+            startingLineNumber = "9"
+            endingLineNumber = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +24,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pinball Attack/GameScene.swift"
-            timestampString = "499352803.308991"
+            timestampString = "499353369.282615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "9"
-            endingLineNumber = "9">
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "didMoveToView(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
