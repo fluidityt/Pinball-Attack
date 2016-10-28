@@ -9,11 +9,11 @@
 // MARK: - Top -
 import SpriteKit
 
-// GLOBAL:
+// ***************************** \\
 var gScene: SKScene?
 var gView:	SKView?
 
-
+// ***************************** \\
 class Flipper: SKSpriteNode {
 	
 	required init?(coder aDecoder: NSCoder) {		fatalError("")	}
@@ -75,8 +75,6 @@ class Flipper: SKSpriteNode {
 						self.anchorPoint.y = self.frame.midY
 				}
 			}
-			
-			
 			// Find position:
 			if self.player == Flip.Player.bottom {
 				switch side {
@@ -93,6 +91,8 @@ class Flipper: SKSpriteNode {
 		}
 	}
 }
+
+// ***************************** \\
 struct Player {
 	
 	// static let scene = gScene
@@ -114,14 +114,13 @@ struct Player {
 	}
 }
 
-
-private var player: (top: Player, bottom: Player)? = nil
-
-var myFlip: Flipper? = nil
-
+// ***************************** \\
 class GameScene: SKScene {
 	
+	// ** \\
+	private var player: (top: Player, bottom: Player)? = nil
 	
+	// ** \\
 	override func didMoveToView(view: SKView) {
 		
 		inits: do {
@@ -144,21 +143,24 @@ class GameScene: SKScene {
 		
 		player?.bottom = Player(player: .bottom)
 		player?.top 	 = Player(player: .top)
-		
 	}
 	
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-	
-		for touch in touches {
-			let tloc = touch.locationInNode(self)
+	// ** \\
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) { for touch in touches {
+		
+		let tloc = touch.locationInNode(self)
 			
-			myFlip?.position = tloc
-			print(tloc)
-			//player?.bottom.position(tloc)
+			
 		}
 	}
 	
+	// ** \\
 	override func update(currentTime: CFTimeInterval) {
 		
 	}
 }
+
+//
+//
+//
+//
