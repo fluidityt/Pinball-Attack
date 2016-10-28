@@ -19,19 +19,19 @@ class Pinball {
 	
 	// IA Fields:
 	let radius: CGFloat
-	let node: SKShapeNode
+	//let node: SKShapeNode
 	
 	init(size: Pinball.Size, scene: SKScene = gScene!) {
 		
 		// Sudden death round is ultra-multiball madness!
 		self.radius = size.toRadius()
-		self.node = SKShapeNode(circleOfRadius: self.radius);_=node
-			.position = scene.center;_=node
-				.fillColor = SKColor.blueColor();_=node
-					.physicsBody = SKPhysicsBody(circleOfRadius: self.radius)
-		
-		scene.addChild(self.node)
-
+//		self.node = SKShapeNode(circleOfRadius: self.radius);_=node
+//			.position = scene.center;_=node
+//				.fillColor = SKColor.blueColor();_=node
+//					.physicsBody = SKPhysicsBody(circleOfRadius: self.radius)
+//		
+//		scene.addChild(self.node)
+//
 		//let sprite = scene.childNodeWithName("sprite")
 	}
 }

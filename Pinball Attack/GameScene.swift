@@ -82,18 +82,18 @@ class GameScene: SKScene {
 		}
 	}
 	
-	override func update(currentTime: CFTimeInterval){
-	
-		resetPinball: do {
-			let sbnpx = self.ball.node.position.x
-			let sbnpy = self.ball.node.position.y
-			
-			if (sbnpx == self.frame.minX) || (sbnpx == self.frame.maxX) {
-				self.ball.node.position = self.center
-			}
-			else if (sbnpy == self.frame.minY) || (sbnpy == self.frame.maxY) {
-				self.ball.node.position = self.center
-			}
-		}
-	}
+//	override func update(currentTime: CFTimeInterval){
+//	
+//		resetPinball: do {
+//			let sbnpx = self.ball.node.position.x
+//			let sbnpy = self.ball.node.position.y
+//			
+//			if (sbnpx == self.frame.minX) || (sbnpx == self.frame.maxX) {
+//				self.ball.node.position = self.center
+//			}
+//			else if (sbnpy == self.frame.minY) || (sbnpy == self.frame.maxY) {
+//				self.ball.node.position = self.center
+//			}
+//		}
+//	}
 }
