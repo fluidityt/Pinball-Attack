@@ -167,7 +167,8 @@ class GameScene: SKScene {
 			let TLOC = touch.locationInNode(self); print(TLOC)
 			
 			func flip(c: ConPhy = ConPhy(), view: SKView = gView!, scene: SKScene = gScene!,
-			          tloc: CGPoint = TLOC, player: (bottom: Player, top: Player) = self.player!) {
+			          tloc: CGPoint = TLOC,
+			          player: (bottom: Player, top: Player)) {
 				
 				let pos_neg = SKAction.sequence([
 					SKAction.rotateByAngle(c.dist, duration: c.flip_up),
@@ -191,8 +192,10 @@ class GameScene: SKScene {
 							player.top.flipper.left.runAction(neg_pos) : // Flip left
 							player.top.flipper.right.runAction(pos_neg)  // Flip right
 					}
+
 				}
-			}; flip()
+			}
+			flip(player: self.player!)
 		}
 	}
 	
