@@ -15,12 +15,12 @@ var gView:	SKView?
 
 
 class Flipper: SKSpriteNode {
-	static func notes() {
-	// FLipper size is 1/4 of width
+	
+	static func notes()	{
+		// FLipper size is 1/4 of width
 	}
 	
 	static let scene = gScene
-	static let view = gView
 	
 	// Enums:
 	enum Flip {
@@ -39,62 +39,64 @@ class Flipper: SKSpriteNode {
 	var state: Flip.State
 	
 	// Methods:
-	func flip() {
-		self.state = Flip.State.up
-		// Do physics stuff
-	}
+	func flip()	{		self.state = Flip.State.up		/* Do physics stuff */	}
 	
 	// Init:
 	init(side: Flip.Side, player: Flip.Player) {
-
-		let scene = Flipper.scene!
-		let view 	= Flipper.view!
 		
-		self.side = side
-		self.player = player
-		self.state = .down
-		self.power = .low
-		
-		let swidth = scene.frame.maxX / 4
-		let sheight = swidth / 5
-		
-		super.init(texture: SKTexture(),
-		           color: SKColor.blueColor(),
-		           size: CGSize(width: swidth, height: sheight))
-		
-		// Find anchorpoint:
-		switch player {
-			case .bottom:
-				switch side {
-					case .left:
-						self.anchorPoint.x = frame.minX
-						self.anchorPoint.y = frame.midY
-					case .right:
-						self.anchorPoint.x = frame.maxX
-						self.anchorPoint.y = frame.midY
-				}
+		inits: do {
 			
-			case .top: ()
-		}
-	
-		// Find position:
-		switch player {
-			case .bottom:
-				switch side {
-					case .left:
-						self.position = view.center
-						self.position.x -= self.frame.width
-					case .right:
-						self.position = view.center
-						self.position.y += self.frame.width
-				}
-			case .top: ()
+			let scene = Flipper.scene!
+			scene.addChild(self)
+			
+			self.side = side
+			self.player = player
+			self.state = .down
+			self.power = .low
+			
+			let swidth = scene.frame.maxX / 4
+			let sheight = swidth / 5
+			
+			super.init(texture: SKTexture(),
+			           color: SKColor.blueColor(),
+			           size: CGSize(width: swidth, height: sheight))
+			
 		}
 		
-		// Add to scene
-		scene.addChild(self)
+		findAnchorAndPos: do {
+			// Find anchorpoint:
+			switch player {
+			case .bottom:
+				switch side {
+				case .left:
+					self.anchorPoint.x = 0
+					self.anchorPoint.y = self.frame.midY
+				case .right:
+					self.anchorPoint.x = 1
+					self.anchorPoint.y = self.frame.midY
+				}
+				
+			case .top: ()
+			}
 			
-		};required init?(coder aDecoder: NSCoder) {		fatalError("init(coder:) has not been implemented")	}
+			// Find position:
+			switch player {
+			case .bottom:
+				switch side {
+				case .left:
+					self.position.y = scene.frame.midY
+					self.position.x = scene.frame.midX
+					self.position.x -= self.frame.width
+				case .right:
+					self.position.y = scene.frame.midY
+					self.position.x = scene.frame.midX
+					self.position.y += self.frame.width
+				}
+			case .top: ()
+			}
+		}
+		
+	};required init?(coder aDecoder: NSCoder) {		fatalError("init(coder:) has not been implemented")	}
 }
 
 
@@ -122,21 +124,34 @@ struct Player {
 
 private var player: (top: Player, bottom: Player)? = nil
 
+var myFlip: Flipper? = nil
 
 class GameScene: SKScene {
 	
 	
 	override func didMoveToView(view: SKView) {
-	
-		gScene = self
-		gView = view
 		
-		self.size = CGSize(width: view.frame.width, height: view.frame.height)
-		self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+		inits: do {
+			// Global:
+			gScene = self
+			gView = view
+			
+			// Init:
+			self.size = CGSize(width: view.frame.width, height: view.frame.height)
+			self.anchorPoint = CGPoint(x: 0, y: 0)
+		}
 		
-		let flipperLeft = Flipper(side: .left, player: .bottom)
-		let flipperRight = Flipper(side: .right, player: .bottom)
-		//player = (top: Player(player: .top), bottom: Player(player: .bottom))
+		testing: do {
+		//		let flipperLeft = Flipper(side: .left, player: .bottom)
+		//let flipperRight = Flipper(side: .right, player: .bottom)
+
+		//flipperLeft.runAction(SKAction.moveBy(CGVector(dx: 500, dy: 500), duration: 10))
+		//myFlip = flipperRight
+			}
+		
+		player?.bottom = Player(player: .bottom)
+		player?.top 	 = Player(player: .top)
+		
 	}
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -144,6 +159,7 @@ class GameScene: SKScene {
 		for touch in touches {
 			let tloc = touch.locationInNode(self)
 			
+			myFlip?.position = tloc
 			print(tloc)
 			//player?.bottom.position(tloc)
 		}
