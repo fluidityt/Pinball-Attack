@@ -164,12 +164,14 @@ class GameScene: SKScene {
 	// ** \\
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		for touch in touches {
-			let TLOC = touch.locationInNode(self); print(TLOC)
 			
-			func flip(c: ConPhy = ConPhy(), view: SKView = gView!, scene: SKScene = gScene!,
-			          tloc: CGPoint = TLOC,
-			          player: (bottom: Player, top: Player)) {
-				
+			let // WHy the FUCK Won"t this work as a func?
+			c: ConPhy = ConPhy(),
+			view: SKView = gView!,
+			tloc: CGPoint = touch.locationInNode(self),
+			player: (bottom: Player, top: Player) = self.player!
+			
+			func flip() {
 				let pos_neg = SKAction.sequence([
 					SKAction.rotateByAngle(c.dist, duration: c.flip_up),
 					SKAction.rotateByAngle(-c.dist, duration: c.flip_down)])
@@ -192,10 +194,8 @@ class GameScene: SKScene {
 							player.top.flipper.left.runAction(neg_pos) : // Flip left
 							player.top.flipper.right.runAction(pos_neg)  // Flip right
 					}
-
 				}
-			}
-			flip(player: self.player!)
+			};flip()
 		}
 	}
 	
