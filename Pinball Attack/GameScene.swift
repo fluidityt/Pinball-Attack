@@ -15,14 +15,40 @@ var gView:	SKView?
 
 // ***************************** \\
 class Pinball {
-	// Sudden death round is ultra-multiball madness!
+	static let scene: SKScene = gScene!
 	
-	let radius: CGFloat // Diameter
+	enum Size: CGFloat {
+		
+		case small, normal, large
+		
+		func toRadius(scene: SKScene = Pinball.scene) -> CGFloat {
+			let sizes = (small: (scene.frame.width / 20),
+			             normal: (scene.frame.width / 15),
+			             large: (scene.frame.width  / 10))
+			switch self {
+				case .small:  return sizes.small
+				case .normal:	return sizes.normal
+				case .large:  return sizes.large
+			}
+		}
+	}
+
+	// IA Fields:
+	let size: 	Pinball.Size
+	let radius: CGFloat
 
 	init(radius: CGFloat) {
-		self.radius = radius
+
+		// Sudden death round is ultra-multiball madness!
+		
+		//self.radius = radius
+		self.size =
+		self.radius = Size.getSize(Pinball.Size.normal)
+		
+		
 	}
 }
+
 // ***************************** \\
 class Flipper: SKSpriteNode {
 	
@@ -86,16 +112,19 @@ class Flipper: SKSpriteNode {
 				}
 			}
 			// Find position:
+			let gap_factor: CGFloat = 2
+			let gap = (ball.radius * gap_factor)
+		
 			if self.player == Flip.Player.bottom {
 				switch side {
 					case .left:
 						self.position.y = scene.frame.midY
 						self.position.x = scene.frame.midX
-						self.position.x -= self.frame.width
+						self.position.x -= (self.frame.width + gap)
 					case .right:
 						self.position.y = scene.frame.midY
 						self.position.x = scene.frame.midX
-						self.position.x += self.frame.width
+						self.position.x += (self.frame.width + gap)
 				}
 			}
 		}
@@ -117,9 +146,9 @@ struct Player {
 //			flipper.right.position.y = flipper.left.frame.maxY
 //	}
 	
-	init(player: Flipper.Flip.Player) {
-		self.flipper.left = Flipper(side: .left, player: player)
-		self.flipper.right = Flipper(side: .right, player: player)
+	init(player: Flipper.Flip.Player, ball: Pinball) {
+		self.flipper.left = Flipper(side: .left, player: player, ball: ball)
+		self.flipper.right = Flipper(side: .right, player: player, ball: ball)
 		self.score = 0
 	}
 }
@@ -151,7 +180,10 @@ class GameScene: SKScene {
 		//myFlip = flipperRight
 			}
 		
-		player = (bottom:Player(player: .bottom), top: Player(player: .top))
+		let ball = Pinball(radius: self.frame.width / 15)
+		
+		player = (bottom:Player(player: .bottom, ball: ball),
+		          top: Player(player: .top, ball: ball))
 		//let left = Flipper(side: .left, player: .bottom)
 		//Xlet right = Flipper(side: .right, player: .bottom)
 		
@@ -160,7 +192,7 @@ class GameScene: SKScene {
 	// ** \\
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) { for touch in touches {
 		
-		let tloc = touch.locationInNode(self)
+		let tloc = touch.locationInNode(self); print(tloc)
 			
 			
 		}
