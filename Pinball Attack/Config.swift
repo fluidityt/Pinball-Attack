@@ -24,8 +24,21 @@ struct ConBall {
 // Flipper:
 struct ConFlip {
 	let
-	power = CGFloat(25),
+	
+	power = CGFloat(25), // TODO: Move this to physics
+	
 	width = CGFloat(scene!.frame.maxX / 4),
 	height = CGFloat((scene!.frame.maxX / 4)/5),
-	gap_factor = CGFloat(2)
+	
+	gap_factor = CGFloat(2),
+	
+	offset: CGFloat = 100
+}
+
+// Physics
+struct ConPhy {
+	let
+	dist: CGFloat = 1, // Distance
+	flip_up:NSTimeInterval = 0.06,
+	flip_down:NSTimeInterval = 0.08
 }

@@ -95,27 +95,39 @@ class Flipper: SKSpriteNode {
 			// Find anchorpoint:
 			if self.player == Flip.Player.bottom {
 				switch side {
-					case .left:
-						self.anchorPoint.x = 0
-						self.anchorPoint.y = self.frame.midY
-					case .right:
-						self.anchorPoint.x = 1
-						self.anchorPoint.y = self.frame.midY
+				case .left:
+					self.anchorPoint.x = 0
+					self.anchorPoint.y = self.frame.midY
+				case .right:
+					self.anchorPoint.x = 1
+					self.anchorPoint.y = self.frame.midY
 				}
 			}
 			// Find position:
 			let gap = (ball.radius * c.gap_factor)
-		
+			
 			if self.player == Flip.Player.bottom {
 				switch side {
-					case .left:
-						self.position.y = scene.frame.midY
-						self.position.x = scene.frame.midX
-						self.position.x -= (self.frame.width + gap)
-					case .right:
-						self.position.y = scene.frame.midY
-						self.position.x = scene.frame.midX
-						self.position.x += (self.frame.width + gap)
+				case .left:
+					self.position.y = (scene.frame.minY + c.offset)
+					self.position.x = scene.frame.midX
+					self.position.x -= (self.frame.width + gap)
+				case .right:
+					self.position.y = (scene.frame.minY + c.offset)
+					self.position.x = scene.frame.midX
+					self.position.x += (self.frame.width + gap)
+				}
+			}
+			else if self.player == Flip.Player.top {
+				switch side {
+				case .left:
+					self.position.y = (scene.frame.maxY - c.offset)
+					self.position.x = scene.frame.midX
+					self.position.x -= (self.frame.width + gap)
+				case .right:
+					self.position.y = (scene.frame.maxY - c.offset)
+					self.position.x = scene.frame.midX
+					self.position.x += (self.frame.width + gap)
 				}
 			}
 		}
@@ -131,11 +143,11 @@ struct Player {
 	
 	var score: Int
 	
-//	func position(xy: CGPoint) {
-//		flipper.left.position = xy
-//			flipper.right.position.x = flipper.left.frame.maxX
-//			flipper.right.position.y = flipper.left.frame.maxY
-//	}
+	//	func position(xy: CGPoint) {
+	//		flipper.left.position = xy
+	//			flipper.right.position.x = flipper.left.frame.maxX
+	//			flipper.right.position.y = flipper.left.frame.maxY
+	//	}
 	
 	init(player: Flipper.Flip.Player, ball: Pinball) {
 		self.flipper.left = Flipper(side: .left, player: player, ball: ball)
@@ -143,6 +155,7 @@ struct Player {
 		self.score = 0
 	}
 }
+
 
 // ***************************** \\
 class GameScene: SKScene {
@@ -163,39 +176,61 @@ class GameScene: SKScene {
 			self.anchorPoint = CGPoint(x: 0, y: 0)
 		}
 		
-		testing: do {
-		//		let flipperLeft = Flipper(side: .left, player: .bottom)
-		//let flipperRight = Flipper(side: .right, player: .bottom)
-
-		//flipperLeft.runAction(SKAction.moveBy(CGVector(dx: 500, dy: 500), duration: 10))
-		//myFlip = flipperRight
-			}
-		
-		let ball = Pinball(size: c.b.default_size)
+		let ball = Pinball(size: ConBall().default_size)
 		
 		player = (bottom:Player(player: .bottom, ball: ball),
 		          top: Player(player: .top, ball: ball))
-		//let left = Flipper(side: .left, player: .bottom)
-		//Xlet right = Flipper(side: .right, player: .bottom)
+		
+		//player!.top = player!.bottom
 		
 	}
 	
 	// ** \\
-	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) { for touch in touches {
-		
-		let tloc = touch.locationInNode(self); print(tloc)
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		for touch in touches {
+			let view = gView!
+			let scene = gScene!; print(scene)
 			
+			let c = ConPhy()
 			
+			let tloc = touch.locationInNode(self); print(tloc)
+			
+			flipPlayerBottom: do {
+				let sequence_left = SKAction.sequence([
+					SKAction.rotateByAngle(c.dist, duration: c.flip_up),
+					SKAction.rotateByAngle(-c.dist, duration: c.flip_down)])
+				
+				let sequence_right = SKAction.sequence([
+					SKAction.rotateByAngle(-c.dist, duration: c.flip_up),
+					SKAction.rotateByAngle(c.dist, duration: c.flip_down)])
+				
+				if tloc.x <= view.center.x
+				{	player?.bottom.flipper.left.runAction(sequence_left) }
+				else if tloc.x >= view.center.x
+				{ player?.bottom.flipper.right.runAction(sequence_right) }
+			}
+			
+			flipPlayerTop: do {
+				let sequence_left	= SKAction.sequence([
+					SKAction.rotateByAngle(-c.dist, duration: c.flip_up),
+					SKAction.rotateByAngle(c.dist, duration: c.flip_down)])
+				
+				let sequence_right = SKAction.sequence([
+					SKAction.rotateByAngle(c.dist, duration: c.flip_up),
+					SKAction.rotateByAngle(-c.dist, duration: c.flip_down)])
+				
+				if tloc.x <= view.center.x
+				{	player?.top.flipper.left.runAction(sequence_left) }
+				else if tloc.x >= view.center.x
+				{ player?.top.flipper.right.runAction(sequence_right) }
+				
+			}
 		}
 	}
+	
 	
 	// ** \\
 	override func update(currentTime: CFTimeInterval) {
 		
 	}
 }
-
-//
-//
-//
-//
