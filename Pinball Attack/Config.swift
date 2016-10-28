@@ -42,3 +42,8 @@ struct ConPhy {
 	flip_up:NSTimeInterval = 0.06,
 	flip_down:NSTimeInterval = 0.08
 }
+
+
+extension SKScene {
+	var center: CGPoint { get { return CGPoint(x: self.frame.midX, y: self.frame.midY) } }
+}
