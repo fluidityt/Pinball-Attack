@@ -105,6 +105,7 @@ class Flipper: SKSpriteNode {
 			
 			if self.player == Flip.Player.bottom {
 				switch side {
+					
 				case .left:
 					self.position.y = (scene.frame.minY + c.offset)
 					self.position.x = (scene.frame.midX - (self.frame.width + gap))
@@ -149,8 +150,6 @@ var player: (top: Player, bottom: Player)?
 class GameScene: SKScene {
 	
 	// ** \\
-	
-	// ** \\
 	override func didMoveToView(view: SKView) {
 		
 		inits: do {
@@ -168,19 +167,21 @@ class GameScene: SKScene {
 			self.addChild(label)
 		}
 		
+		ball = Pinball(size: ConBall().default_size)
+		
 	/*
 		player = (bottom:Player(player: .bottom, ball: ball!),
 		          top: Player(player: .top, ball: ball!))
 		
 		*/
-		ball = Pinball(size: ConBall().default_size)
 	}
 	
 	// ** \\
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-		taps += 1;		let n = ball?.node;		let up = CGVector(dx: 0, dy: 200)
+		taps += 1;		let n = ball?.node;		let up = CGVector(dx: 0, dy: 2000)
+		let down = CGVector(dx: 0, dy: -2000)
 		
-		n?.physicsBody?.applyForce(up)
+		n?.physicsBody?.applyForce(down)
 		
 		/* enum: */ ;{
 		enum HitStrength: CGFloat {
@@ -231,11 +232,21 @@ class GameScene: SKScene {
 	
 	override func update(currentTime: CFTimeInterval){
 		FullStopHandler.handle() // NEEDS TESTING // issue could be if a big force is applied in between frames
-		
-		let n = ball?.node;	if n?.position.y >= self.frame.maxY {	n?.position = self.center	}
-		counter += 1; if counter >= 60 { seconds += 1; counter = 0 }
+		let up = CGVector(dx: 0, dy: 2000)
 
-		if seconds >= 4 { n?.fullStop(); seconds = 0 }
+		let n = ball?.node;	counter += 1; if counter >= 60 { seconds += 1; counter = 0 }
+		
+		resetBall: do {
+			
+			if n?.position.y >= self.frame.maxY {	n?.position = self.center	}
+			if n?.position.y <= self.frame.minY {
+				label.text = "\(n!.position.y)"
+				//n?.fullStop()
+				n?.position = self.center
+				n?.physicsBody?.applyForce(up)
+			}
+		}
+		
 		
 		JUNK: do {
 		/* seconds: ;{
@@ -266,8 +277,22 @@ var counter = 0
 var seconds = 0
 
 struct FullStopHandler { typealias this = FullStopHandler
-	// I may need the stopped-on property
-	static var node_array = [SKNode]()
+
+	static var stop_dict: [SKNode: [CGVector]] = [:]
+	
+	static func addForce(next_force: CGVector, to node: SKNode) {
+	
+	static func stop(node: SKNode) {
+		
+		// Don"t wipeout whatever stored values for vectors we already ahve
+		if node.physicsBody?.pinned == false { return }
+		else {
+			node.physicsBody?.pinned = true
+			// Reset the pinned status on next frame ( .handle() )
+			stop_dict.updateValue(nil, forKey: node)
+			
+		
+	}
 	
 	static func handle() {
 		if node_array.count > 0 {
@@ -277,8 +302,9 @@ struct FullStopHandler { typealias this = FullStopHandler
 		}
 	}
 	
-	static func stop(node: SKNode) {
-		node_array.append(node)
-		node.physicsBody?.pinned = true
-	}
 }
+//
+//
+//
+//
+

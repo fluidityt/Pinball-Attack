@@ -9,6 +9,13 @@
 import SpriteKit
 
 
+func dicto() {
+	
+	var mydict: [SKNode: SKPhysicsBody]
+	
+
+	
+}
 
 private let scene2 = gScene
 // Ball
@@ -49,7 +56,23 @@ extension SKScene {
 }
 
 extension SKNode {
+	
+}
+
+extension SKPhysicsBody {
+	
+	// For use in FullStopHandler
+	//var nextForce: [CGFloat] { get {} set{}}
+	
+	func applyForce(nextForce force: CGVector) {
+		// For use in FullStopHandler
+		if self.pinned {	self.nextForce.append(force) }
+		else { self.applyForce(force) }
+	
+	
 	func fullStop() {
-		FullStopHandler.stop(self) // make a lsit
+		FullStopHandler.stop(self.node!) // make a lsit
 	}
 }
+
+
