@@ -250,6 +250,7 @@ class GameScene: SKScene {
 	}
 
 	override func update ( currentTime: CFTimeInterval ) {
+
 	let up = CGVector ( dx: 0, dy: 2000 )
 		updateTime: do { counter += 1;
 		if counter >= 60 {
@@ -258,7 +259,7 @@ class GameScene: SKScene {
 		}
 			}
 		
-		updateStuff()
+		updateStuff(gCheckList: &gNodesToCheck)
 		
 
 
@@ -271,6 +272,7 @@ class GameScene: SKScene {
 		}
 	}
 }
+
 
 // Update() globes:
 var taps    = 0

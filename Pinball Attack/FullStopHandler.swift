@@ -33,15 +33,25 @@ extension SKNode {
 		let pb = self.physicsBody!
 		pb.pinned = false
 	}
+
+	func kill() {
+		gNodesToCheck.remove( self )
+	}
 }
 
 
-func updateStuff<imp>( imp: imp ) {
+func updateStuff( inout gCheckList gnodes_to_check: Set<SKNode> ) {
 
 	// Nothing to do:
-	if gNodesToCheck.isEmpty { return }
+	guard !gnodes_to_check.isEmpty else { return }
 
 	// Act then reset:
-	else { gNodesToCheck.removeAll() }
+	for node in gnodes_to_check {
+		guard  !node.nextForces.isEmpty else { return }
 
+		for force in node.nextForces { node.physicsBody?.applyForce( force ) }
+
+		node.nextForces.removeAll()
+	}
 }
+
