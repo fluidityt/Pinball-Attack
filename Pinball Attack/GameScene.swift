@@ -46,7 +46,7 @@ class Pinball {
 		}
 	}
 
-	func applyForce( force: CGVector ) {
+	func applyForceToNode( force: CGVector ) {
 		//1. Check if pinned
 		//2. pb.applyForce() if not
 		//3. self.storeForce() if so
@@ -54,7 +54,7 @@ class Pinball {
 		//1
 		if self.node.physicsBody?.pinned == false {
 			//2
-			self.node.physicsBody?.applyForce( <#T##force: CGVector###> )
+			self.node.physicsBody?.applyForce( force )
 		}
 		//3
 		self.storedForces.append( force )
@@ -85,19 +85,21 @@ class Pinball {
 		}
 
 		//3
-		if self.storedForces.isEmpty { return }
+		if self.storedForces.isEmpty {
+			//4
+			return
+		}
 
-		//
-		for force in self.storedForces
+		//5
+		for force in self.storedForces {
+			//6
+			self.node.physicsBody?.applyForce( force )
+		}
+		//7
+		self.storedForces.removeAll()
 
-
-
-
-
-
-
+		print( "success" )
 	}
-
 
 	enum Size: CGFloat {
 
@@ -280,18 +282,10 @@ class GameScene: SKScene {
 
 	// ** \\
 	override func touchesBegan ( touches: Set<UITouch>, withEvent event: UIEvent? ) {
-
-		taps += 1;
-		let n = ball
-		let up = CGVector ( dx: 0, dy: 2000 )
-
-		// TODO: APPARENTLY EVERYTHING NEEDS TO BE SOME FUNCTION OF SCREEN SIZE...
-		let down = CGVector ( dx: 0, dy: -20000 )
-
-		//n!.applyForce(down, checkList: &gNodesToCheck)
-
 		for touch in touches {
 			/*
+			
+			
 			func flip(c: ConPhy = ConPhy(),
 			view: SKView = gView!,
 			tloc: CGPoint = touch.locationInNode(self),
@@ -322,34 +316,47 @@ class GameScene: SKScene {
 			}
 			*/
 		}
+		taps += 1;
+
+		// TODO: MAKE ENUM OF SLIDING SCALE 1-10 FOR [f(ScreenSize) = x]
+		// TODO: then, test that enum to make sure it works lol
+		let n = ball
+		let up = CGVector ( dx: 0, dy: (self.frame.maxY/2))
+		let down = CGVector ( dx: 0, dy: (0 - (self.frame.maxY / 2)) )
+
+		n!.applyForceToNode(down)
 	}
 
-	override func update ( currentTime: CFTimeInterval ) {
-
-	let up = CGVector ( dx: 0, dy: 2000 )
-		updateTime: do { counter += 1;
+	// ******** UPDATE STUFF ******* \\
+	func ticker() {
+		counter += 1;
 		if counter >= 60 {
 			seconds += 1;
 			counter = 0
 		}
-			}
-		
-		updateStuff(gCheckList: &gNodesToCheck)
-		
+	}
 
+	func resetBall() {
+		/*if n.position.y >= self.frame.maxY { n.position = self.center }*/
 
-		resetBall:do {
+		let up = CGVector( dx: 0, dy: 2000 )
+		let n = ball!.node
 
-			let n = ball!.node
-
-			if n.position.y >= self.frame.maxY {				n.position = self.center			}
+		if n.position.y <= self.frame.minY {
+			n.position = self.center
+			ball!.stop()
+			ball!.applyForceToNode(up)
 			
-			// current testing:
-			if n.position.y <= self.frame.minY {
-				n.position = self.center
-				//ball?.stop(checkList: &gNodesToCheck)
-			}
 		}
+	}
+	override func update( currentTime: CFTimeInterval ) {
+		ball!.update()
+		ticker()
+		resetBall()
+
+
+
+
 	}
 }
 
