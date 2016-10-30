@@ -12,7 +12,7 @@ struct FullStopHandler {
 	typealias FullStopDict = [SKNode: [CGVector]?]
 	private init() {}
 
-	static func queueForce( next_force: CGVector, to node: SKNode, FP fs_dict: [SKNode: [CGVector]?] )
+	static func queueForce( next_force: CGVector, node: SKNode, fs_dict: [SKNode: [CGVector]?] )
 					-> [SKNode: [CGVector]?] {
 
 		// Check if empty:
@@ -27,18 +27,19 @@ struct FullStopHandler {
 		else {
 			var new_vector_array = fs_dict[node]!
 			new_vector_array!.append( next_force )
-			
+
 			var new_dict = fs_dict
-			new_dict.updateValue(new_vector_array, forKey: node)
-			
+			new_dict.updateValue( new_vector_array, forKey: node )
+
 			return new_dict
 		}
 	} /*Called in SKPB*/
 
-	static func stop( node: SKNode ) {
+	static func stop( node: SKNode, dict fs_dict: [SKNode: [CGVector]?] ) -> [SKNode: [CGVector]?] {
 		if node.physicsBody?.pinned == false {
-			return
+			return fs_dict
 		}
+
 		else {
 			node.physicsBody?.pinned = true
 			OOP --> this.stop_dict.updateValue( nil, forKey: node )
