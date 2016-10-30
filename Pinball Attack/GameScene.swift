@@ -75,7 +75,7 @@ class Flipper: SKSpriteNode {
 	
 	// Init:
 	init(side: Flip.Side, player: Flip.Player, ball: Pinball, scene: SKScene = gScene!, c: ConFlip = ConFlip()) {
-		
+
 		inits: do {
 			
 			self.side = side
@@ -184,9 +184,7 @@ class GameScene: SKScene {
 		let down = CGVector(dx: 0, dy: -2000)
 		
 		n?.physicsBody?.applyForce(nextForce: down)
-	
-		
-		/* good stuff: */ ;{
+
 		/*for touch in touches {
 		
 		func flip(c: ConPhy = ConPhy(),
@@ -222,7 +220,7 @@ class GameScene: SKScene {
 		// FUCKING BUGS:
 		flip(tloc: touch.locationInNode(self))
 		} */
-			}()
+
 	}
 	
 	override func update(currentTime: CFTimeInterval){
@@ -245,26 +243,6 @@ class GameScene: SKScene {
 				n.physicsBody?.applyForce(up)
 			}
 		}
-		
-		JUNK: do {
-		/* seconds: ;{
-		label.text = "seconds: \(seconds), taps: \(taps)";	if seconds == 4		{
-			n?.physicsBody?.pinned = false
-			seconds = 0
-		}}() */
-		
-		/* resetPinball: do {
-			let sbnpx = ball!.node.position.x
-			let sbnpy =  ball!.node.position.y
-			
-			if (sbnpx == 0) || (sbnpx == self.frame.maxX) {
-				ball!.node.position = self.center
-			}
-			else if (sbnpy == 0) || (sbnpy == self.frame.maxY) {
-				ball!.node.position = self.center
-			}
-		} */
-			}
 	}
 }
 
@@ -273,55 +251,6 @@ var taps = 0
 var label = SKLabelNode(text: "0")
 var counter = 0
 var seconds = 0
-
-struct FullStopHandler { typealias this = FullStopHandler; private init(){} // protected
-
-	private static var stop_dict: [SKNode: [CGVector]?] = [:] // protected
-	
-	static func queueForce(next_force: CGVector, to node: SKNode) {
-		
-		// Check if empty:
-		if this.stop_dict[node] == nil {
-			OOP-->this.stop_dict.updateValue([next_force], forKey: node)
-		}
-		
-		// Append if not:
-		else {
-			var forceQ = this.stop_dict[node]!
-			forceQ!.append(next_force)
-			OOP-->this.stop_dict.updateValue(forceQ!, forKey: node)
-		}
-	} // Called in SKPB
-	
-	static func stop(node: SKNode) {
-		if node.physicsBody?.pinned == false { return }
-		else {
-			node.physicsBody?.pinned = true
-			/* Reset the pinned status on next frame ( .handle() )*/
-			OOP-->this.stop_dict.updateValue(nil, forKey: node)
-		}
-	} // Called in SKPB
-	
-	static func handle() {
-		
-		// Unpin, then apply any Qd forces:
-		if this.stop_dict.count > 0 {
-			
-			// Unpin:
-			for node in this.stop_dict.keys  {
-				node.physicsBody?.pinned = false
-				
-				// Check for forces:
-				if this.stop_dict[node] != nil {
-				
-					// Apply forces:
-					for force in this.stop_dict[node]!! {	node.physicsBody?.applyForce(force)	}
-				}
-			}
-			OOP-->this.stop_dict.removeAll()
-		}
-	} // Called in update
-}
 
 
 //
