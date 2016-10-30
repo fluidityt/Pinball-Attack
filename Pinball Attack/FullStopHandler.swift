@@ -4,14 +4,31 @@ import UIKit
 
 
 var gFSDict: [SKNode: [CGVector]?] = [:]
+typealias FSDict = [SKNode: [CGVector]?]
 
+/* For use in FullStopHandler: */
+extension SKPhysicsBody {
+
+
+	/// If pinned Q the next force, else just do the force:
+	func applyForce( nextForce force: CGVector, fs_dict: FSDict = gFSDict ) {
+
+		if self.pinned { FullStopHandler.queueForce( willAppy: force, onNode: self.node!, fromDict: fs_dict ) }
+
+		else { self.applyForce( force ) }
+
+	}
+	// Stop the node NOW, then add it to a Q to be unpinned...
+	func fullStop() {
+		FullStopHandler.stop( self.node!, fs_dict: )
+	}
+
+}
+
+/* Uses gFSDict and the above extension: */
 struct FullStopHandler {
 
-	// Inits:
-
-	// See also, gFSDict
 	private init() {}
-	typealias FSDict = [SKNode: [CGVector]?]
 
 	static func queueForce( willAppy next_force: CGVector, onNode node: SKNode, fromDict fs_dict: FSDict)
 					-> FSDict {

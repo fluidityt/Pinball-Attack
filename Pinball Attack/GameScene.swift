@@ -246,7 +246,7 @@ class GameScene: SKScene {
 
 	override func update ( currentTime: CFTimeInterval ) {
 
-		FullStopHandler.handle () // NEEDS TESTING
+		FullStopHandler.handle(gFSDict) // NEEDS TESTING
 
 		let up = CGVector ( dx: 0, dy: 2000 )
 
