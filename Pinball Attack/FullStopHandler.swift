@@ -5,22 +5,20 @@ import Foundation
 
 var gFSDict: [SKNode: [CGVector]?] = [:]
 
-
-
 struct FullStopHandler {
 
 	// Inits:
+
 	// See also, gFSDict
-	typealias FullStopDict = [SKNode: [CGVector]?]
 	private init() {}
-
-
+	typealias FSDict = [SKNode: [CGVector]?]
+	
 	static func queueForce( next_force: CGVector, node: SKNode, fs_dict: [SKNode: [CGVector]?] )
 					-> [SKNode: [CGVector]?] {
 
 		// Check if empty:
 		if fs_dict[node] == nil {
-			var new_dict = fs_dict
+			var new_dict = fs_dict as! Zoom.taFullStopDict
 			new_dict.updateValue( [next_force], forKey: node )
 
 			return fs_dict
@@ -39,7 +37,7 @@ struct FullStopHandler {
 	} /*Called in SKPB*/
 
 
-	static func stop<FullStopDict>( node: SKNode, dict fs_dict: [SKNode: [CGVector]?] )
+	//static func stop<FullStopDict>( node: SKNode, dict fs_dict: [SKNode: [CGVector]?] )
 					-> FullStopDict {
 
 

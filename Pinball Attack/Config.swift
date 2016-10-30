@@ -11,7 +11,6 @@ import UIKit
 
 
 
-
 private let scene2 = gScene
 // Ball
 struct ConBall {

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Pinball Attack/Config.swift" line="71" />
+    <bookmark url="file://$PROJECT_DIR$/Pinball Attack/Config.swift" line="70" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aed8aa68-adb4-439c-bdab-3d53a2c74689" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/Contents.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/contents.xcplayground" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/timeline.xctimeline" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Pinball Attack/File.swift" afterPath="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pinball Attack.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/File.swift" afterPath="$PROJECT_DIR$/Pinball Attack/File.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/Config.swift" afterPath="$PROJECT_DIR$/Pinball Attack/Config.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,12 +28,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="scratch_1.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift">
+      <file leaf-file-name="FullStopHandler.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="540">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,6 +45,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -49,6 +55,7 @@
         <option value="$PROJECT_DIR$/Pinball Attack/GameScene.swift" />
         <option value="$PROJECT_DIR$/Pinball Attack/File.swift" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift" />
+        <option value="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" />
       </list>
     </option>
   </component>
@@ -134,6 +141,14 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Pinball Attack" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Products" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pinball Attack.app" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -225,12 +240,13 @@
       <updated>1477791924791</updated>
       <workItem from="1477791930737" duration="839000" />
       <workItem from="1477793159973" duration="3702000" />
-      <workItem from="1477797351805" duration="8923000" />
+      <workItem from="1477797351805" duration="10366000" />
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13464000" />
+    <option name="totallyTimeSpent" value="14907000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -245,17 +261,17 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.75276244" sideWeight="0.4939394" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7983425" sideWeight="0.4939394" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3046875" sideWeight="0.5060606" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2386617" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30408472" sideWeight="0.6560773" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3237519" sideWeight="0.6560773" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28623718" sideWeight="0.34392264" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -266,9 +282,9 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.75276244" sideWeight="0.4939394" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7983425" sideWeight="0.4939394" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294271" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -276,12 +292,12 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2386617" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30408472" sideWeight="0.6560773" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3237519" sideWeight="0.6560773" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28623718" sideWeight="0.34392264" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -307,7 +323,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Pinball Attack/Config.swift</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -364,19 +380,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1477806454000" expanded="true" signature="0:47" ph="import ..." />
-            <marker date="1477806454000" expanded="true" signature="117:1465" ph="{...}" />
-            <marker date="1477806454000" expanded="true" signature="130:220" ph="..." />
-            <marker date="1477806454000" expanded="true" signature="201:220" ph="..." />
-            <marker date="1477806454000" expanded="true" signature="202:220" ph="..." />
-            <marker date="1477806454000" expanded="false" signature="223:744" ph="..." />
-            <marker date="1477806454000" expanded="false" signature="346:725" ph="{...}" />
-            <marker date="1477806454000" expanded="false" signature="726:744" ph="/*...*/" />
-            <marker date="1477806454000" expanded="true" signature="853:994" ph="{...}" />
-            <marker date="1477806454000" expanded="false" signature="995:1015" ph="/*...*/" />
-            <marker date="1477806454000" expanded="false" signature="1039:1443" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -384,19 +388,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1477806454000" expanded="true" signature="0:47" ph="import ..." />
-            <marker date="1477806454000" expanded="true" signature="117:1465" ph="{...}" />
-            <marker date="1477806454000" expanded="true" signature="130:220" ph="..." />
-            <marker date="1477806454000" expanded="true" signature="201:220" ph="..." />
-            <marker date="1477806454000" expanded="true" signature="202:220" ph="..." />
-            <marker date="1477806454000" expanded="false" signature="223:744" ph="..." />
-            <marker date="1477806454000" expanded="false" signature="346:725" ph="{...}" />
-            <marker date="1477806454000" expanded="false" signature="726:744" ph="/*...*/" />
-            <marker date="1477806454000" expanded="true" signature="853:994" ph="{...}" />
-            <marker date="1477806454000" expanded="false" signature="995:1015" ph="/*...*/" />
-            <marker date="1477806454000" expanded="false" signature="1039:1443" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -405,20 +397,20 @@
         <state relative-caret-position="437">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <marker date="1477799536000" expanded="false" signature="0:139" ph="//..." />
-            <marker date="1477799536000" expanded="false" signature="141:170" ph="import ..." />
-            <marker date="1477799536000" expanded="true" signature="226:351" ph="{...}" />
-            <marker date="1477799536000" expanded="true" signature="380:633" ph="{...}" />
-            <marker date="1477799536000" expanded="true" signature="660:787" ph="{...}" />
-            <marker date="1477799536000" expanded="true" signature="808:908" ph="{...}" />
-            <marker date="1477799536000" expanded="true" signature="831:906" ph="{...}" />
-            <marker date="1477799536000" expanded="false" signature="839:903" ph="{...}" />
-            <marker date="1477799536000" expanded="false" signature="910:934" ph="/*...*/" />
-            <marker date="1477799536000" expanded="false" signature="999:1013" ph="{...}" />
-            <marker date="1477799536000" expanded="true" signature="1064:1068" ph="{...}" />
-            <marker date="1477799536000" expanded="true" signature="1126:1477" ph="{...}" />
-            <marker date="1477799536000" expanded="false" signature="1231:1353" ph="{...}" />
-            <marker date="1477799536000" expanded="false" signature="1434:1475" ph="{...}" />
+            <marker date="1477808501000" expanded="false" signature="0:139" ph="//..." />
+            <marker date="1477808501000" expanded="false" signature="141:170" ph="import ..." />
+            <marker date="1477808501000" expanded="true" signature="225:350" ph="{...}" />
+            <marker date="1477808501000" expanded="true" signature="379:632" ph="{...}" />
+            <marker date="1477808501000" expanded="true" signature="659:786" ph="{...}" />
+            <marker date="1477808501000" expanded="true" signature="807:907" ph="{...}" />
+            <marker date="1477808501000" expanded="true" signature="830:905" ph="{...}" />
+            <marker date="1477808501000" expanded="false" signature="838:902" ph="{...}" />
+            <marker date="1477808501000" expanded="false" signature="909:933" ph="/*...*/" />
+            <marker date="1477808501000" expanded="false" signature="998:1012" ph="{...}" />
+            <marker date="1477808501000" expanded="true" signature="1063:1067" ph="{...}" />
+            <marker date="1477808501000" expanded="true" signature="1125:1476" ph="{...}" />
+            <marker date="1477808501000" expanded="false" signature="1230:1352" ph="{...}" />
+            <marker date="1477808501000" expanded="false" signature="1433:1474" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -459,29 +451,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/File.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
+        <state relative-caret-position="597">
           <caret line="72" column="23" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
-          <folding>
-            <marker date="1477806454000" expanded="true" signature="0:47" ph="import ..." />
-            <marker date="1477806454000" expanded="true" signature="117:1465" ph="{...}" />
-            <marker date="1477806454000" expanded="true" signature="130:220" ph="..." />
-            <marker date="1477806454000" expanded="true" signature="201:220" ph="..." />
-            <marker date="1477806454000" expanded="true" signature="202:220" ph="..." />
-            <marker date="1477806454000" expanded="false" signature="223:744" ph="..." />
-            <marker date="1477806454000" expanded="false" signature="346:725" ph="{...}" />
-            <marker date="1477806454000" expanded="false" signature="726:744" ph="/*...*/" />
-            <marker date="1477806454000" expanded="true" signature="853:994" ph="{...}" />
-            <marker date="1477806454000" expanded="false" signature="995:1015" ph="/*...*/" />
-            <marker date="1477806454000" expanded="false" signature="1039:1443" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

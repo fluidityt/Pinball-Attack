@@ -14,7 +14,7 @@
 		C1FD9EFC1DC2E97C00D133B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FD9EFA1DC2E97C00D133B0 /* Main.storyboard */; };
 		C1FD9EFE1DC2E97C00D133B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FD9EFD1DC2E97C00D133B0 /* Assets.xcassets */; };
 		C1FD9F011DC2E97C00D133B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FD9EFF1DC2E97C00D133B0 /* LaunchScreen.storyboard */; };
-		C1FD9F091DC2E99400D133B0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD9F081DC2E99400D133B0 /* File.swift */; };
+		C1FD9F091DC2E99400D133B0 /* FullStopHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD9F081DC2E99400D133B0 /* FullStopHandler.swift */; };
 		C1FD9F0B1DC2E9A900D133B0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD9F0A1DC2E9A900D133B0 /* Config.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 		C1FD9EFD1DC2E97C00D133B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1FD9F001DC2E97C00D133B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1FD9F021DC2E97C00D133B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1FD9F081DC2E99400D133B0 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		C1FD9F081DC2E99400D133B0 /* FullStopHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullStopHandler.swift; sourceTree = "<group>"; };
 		C1FD9F0A1DC2E9A900D133B0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; wrapsLines = 1; };
 /* End PBXFileReference section */
 
@@ -65,7 +65,7 @@
 			children = (
 				C1FD9EF21DC2E97C00D133B0 /* AppDelegate.swift */,
 				C1FD9EF41DC2E97C00D133B0 /* GameScene.sks */,
-				C1FD9F081DC2E99400D133B0 /* File.swift */,
+				C1FD9F081DC2E99400D133B0 /* FullStopHandler.swift */,
 				C1FD9F0A1DC2E9A900D133B0 /* Config.swift */,
 				C1FD9EF61DC2E97C00D133B0 /* GameScene.swift */,
 				C1FD9EF81DC2E97C00D133B0 /* GameViewController.swift */,
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1FD9EF71DC2E97C00D133B0 /* GameScene.swift in Sources */,
-				C1FD9F091DC2E99400D133B0 /* File.swift in Sources */,
+				C1FD9F091DC2E99400D133B0 /* FullStopHandler.swift in Sources */,
 				C1FD9EF91DC2E97C00D133B0 /* GameViewController.swift in Sources */,
 				C1FD9F0B1DC2E9A900D133B0 /* Config.swift in Sources */,
 				C1FD9EF31DC2E97C00D133B0 /* AppDelegate.swift in Sources */,
