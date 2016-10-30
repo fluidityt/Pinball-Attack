@@ -8,15 +8,6 @@
 
 import SpriteKit
 
-
-func dicto() {
-	
-	var mydict: [SKNode: SKPhysicsBody]
-	
-
-	
-}
-
 private let scene2 = gScene
 // Ball
 struct ConBall {

@@ -168,6 +168,7 @@ class GameScene: SKScene {
 		}
 		
 		ball = Pinball(size: ConBall().default_size)
+		//ball?.node.physicsBody?.pinned = true
 		
 	/*
 		player = (bottom:Player(player: .bottom, ball: ball!),
@@ -182,15 +183,8 @@ class GameScene: SKScene {
 		
 		let down = CGVector(dx: 0, dy: -2000)
 		
-		n?.physicsBody?.applyForce(down)
-		
-		/* enum: */ ;{
-		enum HitStrength: CGFloat {
-			case light = 200
-			case hard = 2000
-			case lightning = 20000
-			}
-		}()
+		n?.physicsBody?.applyForce(nextForce: down)
+	
 		
 		/* good stuff: */ ;{
 		/*for touch in touches {
@@ -237,15 +231,18 @@ class GameScene: SKScene {
 		
 		let up = CGVector(dx: 0, dy: 2000)
 
-		let n = ball?.node;	counter += 1; if counter >= 60 { seconds += 1; counter = 0 }
+		let n = ball!.node;	counter += 1; if counter >= 60 { seconds += 1; counter = 0 }
 		
 		resetBall: do {
 			
-			if n?.position.y >= self.frame.maxY {	n?.position = self.center	}
-			if n?.position.y <= self.frame.minY {
-				label.text = "\(n!.position.y)"
-				n?.position = self.center
-				n?.physicsBody?.applyForce(up)
+			// Tests if we can apply a force after it gets pinned:
+			
+			if n.position.y >= self.frame.maxY {	n.position = self.center	}
+			if n.position.y <= self.frame.minY {
+				label.text = "\(n.position.y)"
+				n.physicsBody?.fullStop()
+				n.position = self.center
+				n.physicsBody?.applyForce(up)
 			}
 		}
 		
