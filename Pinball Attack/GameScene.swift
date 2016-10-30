@@ -211,9 +211,10 @@ class GameScene: SKScene {
 		let n = ball?.node;
 		let up = CGVector ( dx: 0, dy: 2000 )
 
-		let down = CGVector ( dx: 0, dy: -2000 )
+		// TODO: APPARENTLY EVERYTHING NEEDS TO BE SOME FUNCTION OF SCREEN SIZE...
+		let down = CGVector ( dx: 0, dy: -20000 )
 
-		n?.physicsBody?.applyForce ( down )
+		n!.applyForce(down, checkList: &gNodesToCheck)
 
 		for touch in touches {
 			/*
@@ -267,8 +268,13 @@ class GameScene: SKScene {
 
 			let n = ball!.node;
 
-			if n.position.y >= self.frame.maxY { n.position = self.center }
-			if n.position.y <= self.frame.minY {				n.position = self.center			}
+			if n.position.y >= self.frame.maxY {				n.position = self.center			}
+			
+			// current testing:
+			if n.position.y <= self.frame.minY {
+				n.position = self.center
+				n.stop(checkList: &gNodesToCheck)
+			}
 		}
 	}
 }

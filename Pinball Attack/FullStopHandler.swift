@@ -24,7 +24,8 @@ extension SKNode {
 		addToChecklist(&gnodes_to_check)
 		
 		let pb = self.physicsBody!
-		pb.pinned ? self.nextForces.append( force ) : pb.applyForce( force )
+		pb.pinned ?
+			{print("ok");self.nextForces.append( force )}() : pb.applyForce( force )
 	}
 
 	func stop(inout checkList gnodes_to_check: Set<SKNode>) {
@@ -47,8 +48,13 @@ func updateStuff( inout gCheckList gnodes_to_check: Set<SKNode> ) {
 
 	// Act then reset:
 	for node in gnodes_to_check {
+		
+		// Unpin:
+		guard !node.physicsBody!.pinned else { continue }
+		node.physicsBody!.pinned = false
+		
+		// Apply forces:
 		guard  !node.nextForces.isEmpty else { return }
-
 		for force in node.nextForces { node.physicsBody?.applyForce( force ) }
 
 		node.nextForces.removeAll()
