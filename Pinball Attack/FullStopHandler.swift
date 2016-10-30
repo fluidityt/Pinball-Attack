@@ -13,12 +13,12 @@ struct FullStopHandler {
 	private init() {}
 	typealias FSDict = [SKNode: [CGVector]?]
 
-	static func queueForce( next_force: CGVector, node: SKNode, fs_dict: FSDict)
+	static func queueForce( willAppy next_force: CGVector, onNode node: SKNode, fromDict fs_dict: FSDict)
 					-> FSDict {
 
 		// Check if empty:
 		if fs_dict[node] == nil {
-			var new_dict = fs_dict as! Zoom.taFullStopDict
+			var new_dict = fs_dict
 			new_dict.updateValue( [next_force], forKey: node )
 
 			return fs_dict
@@ -51,25 +51,30 @@ struct FullStopHandler {
 
 	} /* Called in SKPB */
 
-	static func handle() {
+	static func handle(fs_dict: FSDict) -> FSDict {
+
 
 		// Unpin, then apply any Qd forces:
-		if this.stop_dict.count > 0 {
+		guard fs_dict.count == 0 else {
 
-			// Unpin:
-			for node in this.stop_dict.keys {
-				OOP --> node.physicsBody?.pinned = false
+			// Unpin (keys):
+			for node in fs_dict.keys {
+				OOP --> (node.physicsBody?.pinned = false)
 
-				// Check for forces:
-				if this.stop_dict[node] != nil {
+				// Check for forces (value):
+				if fs_dict[node] != nil {
 
 					// Apply forces:
-					for force in this.stop_dict[node]!! {
+					let forces_array = fs_dict[node]!
+
+					for force in forces_array! {
 						node.physicsBody?.applyForce( force )
 					}
 				}
 			}
+
 			OOP --> this.stop_dict.removeAll()
 		}
+		
 	} // Called in update
 }
