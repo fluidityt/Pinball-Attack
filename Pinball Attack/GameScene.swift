@@ -213,7 +213,7 @@ class GameScene: SKScene {
 
 		let down = CGVector ( dx: 0, dy: -2000 )
 
-		n?.physicsBody?.applyForce ( nextForce: down )
+		n?.physicsBody?.applyForce ( down )
 
 		for touch in touches {
 			/*
@@ -250,29 +250,24 @@ class GameScene: SKScene {
 	}
 
 	override func update ( currentTime: CFTimeInterval ) {
-
-		gFSDict = FullStopHandler.handle( gFSDict ) // NEEDS TESTING
-
-		let up = CGVector ( dx: 0, dy: 2000 )
-
-		let n = ball!.node;
-		counter += 1;
+	let up = CGVector ( dx: 0, dy: 2000 )
+		updateTime: do { counter += 1;
 		if counter >= 60 {
 			seconds += 1;
 			counter = 0
 		}
+			}
+		
+		updateStuff()
+		
+
 
 		resetBall:do {
 
-			// Tests if we can apply a force after it gets pinned:
+			let n = ball!.node;
 
 			if n.position.y >= self.frame.maxY { n.position = self.center }
-			if n.position.y <= self.frame.minY {
-				label.text = "\(n.position.y)"
-				n.physicsBody?.fullStop( gFSDict )
-				n.position = self.center
-				n.physicsBody!.applyForce(nextForce: up)
-			}
+			if n.position.y <= self.frame.minY {				n.position = self.center			}
 		}
 	}
 }
