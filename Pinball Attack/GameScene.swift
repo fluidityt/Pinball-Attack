@@ -44,8 +44,7 @@ class Pinball {
 		addToChecklist(&gnodes_to_check)
 
 		let pb = self.node.physicsBody!
-		pb.pinned ?
-				{print("ok");self.nextForces.append( force )}() : pb.applyForce( force )
+		pb.pinned ? self.nextForces.append( force ) : pb.applyForce( force )
 	}
 
 	func stop(inout checkList gnodes_to_check: [Pinball]) {
