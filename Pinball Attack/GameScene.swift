@@ -25,6 +25,41 @@ var gView:  SKView?
 
 class Pinball {
 
+
+	var addToCheck: Bool          /*-*/ { get { return self.addToCheck } set {} } /*_*/
+
+	var nextForces: [CGVector]    /*-*/ {	get { return self.nextForces} set {} } /*_*/
+
+	/** Fileprivate checks self against global and adds if needed: */
+	private func addToChecklist(inout noded: [Pinball]) {
+		for node in noded {
+			if node === self { () }
+			else { noded.append(self) }
+		}
+	}
+
+	/** Checks if pinned.. if yes, puts in NextForces */
+	func applyForce( force: CGVector, inout checkList gnodes_to_check: [Pinball] ) {
+		/* TODO: Why can't I put this in the fucking default prams? */
+		addToChecklist(&gnodes_to_check)
+
+		let pb = self.node.physicsBody!
+		pb.pinned ?
+				{print("ok");self.nextForces.append( force )}() : pb.applyForce( force )
+	}
+
+	func stop(inout checkList gnodes_to_check: [Pinball]) {
+		addToChecklist(&gnodes_to_check)
+
+		let pb = self.node.physicsBody!
+		pb.pinned = false
+	}
+
+	func kill() {
+		gNodesToCheck.remove( self )
+	}
+
+
 	enum Size: CGFloat {
 
 		case small, normal, large
