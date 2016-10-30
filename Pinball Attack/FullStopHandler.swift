@@ -3,6 +3,7 @@ import UIKit
 import Foundation
 
 
+
 var gFSDict: [SKNode: [CGVector]?] = [:]
 
 struct FullStopHandler {
@@ -12,7 +13,7 @@ struct FullStopHandler {
 	// See also, gFSDict
 	private init() {}
 	typealias FSDict = [SKNode: [CGVector]?]
-	
+
 	static func queueForce( next_force: CGVector, node: SKNode, fs_dict: [SKNode: [CGVector]?] )
 					-> [SKNode: [CGVector]?] {
 
@@ -37,15 +38,18 @@ struct FullStopHandler {
 	} /*Called in SKPB*/
 
 
-	//static func stop<FullStopDict>( node: SKNode, dict fs_dict: [SKNode: [CGVector]?] )
-					-> FullStopDict {
+	static func stop( node: SKNode, fs_dict: [SKNode: [CGVector]?] )
+					-> [SKNode: [CGVector]?] {
 
+		guard !node.physicsBody!.pinned else { return fs_dict }
 
-		if node.physicsBody?.pinned == false {
-			OOP --> (node.physicsBody?.pinned = true)
+		OOP --> (node.physicsBody?.pinned = true)
 
-			fs_dict.updateValue( nil, forKey: node )
-		}
+		var new_dict = fs_dict
+		new_dict.updateValue( nil, forKey: node )
+
+		return new_dict
+
 	} /* Called in SKPB */
 
 	static func handle() {
