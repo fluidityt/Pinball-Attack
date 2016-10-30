@@ -1,16 +1,19 @@
 import SpriteKit
 import UIKit
-
+import Foundation
 
 
 var gFSDict: [SKNode: [CGVector]?] = [:]
 
+
+
 struct FullStopHandler {
 
 	// Inits:
-	// See also, gFSDict, and FullStopDict
+	// See also, gFSDict
 	typealias FullStopDict = [SKNode: [CGVector]?]
 	private init() {}
+
 
 	static func queueForce( next_force: CGVector, node: SKNode, fs_dict: [SKNode: [CGVector]?] )
 					-> [SKNode: [CGVector]?] {
@@ -35,16 +38,17 @@ struct FullStopHandler {
 		}
 	} /*Called in SKPB*/
 
-	static func stop( node: SKNode, dict fs_dict: [SKNode: [CGVector]?] ) -> [SKNode: [CGVector]?] {
-		if node.physicsBody?.pinned == false {
-			return fs_dict
-		}
 
-		else {
-			node.physicsBody?.pinned = true
-			OOP --> this.stop_dict.updateValue( nil, forKey: node )
+	static func stop<FullStopDict>( node: SKNode, dict fs_dict: [SKNode: [CGVector]?] )
+					-> FullStopDict {
+
+
+		if node.physicsBody?.pinned == false {
+			OOP --> (node.physicsBody?.pinned = true)
+
+			fs_dict.updateValue( nil, forKey: node )
 		}
-	} // Called in SKPB
+	} /* Called in SKPB */
 
 	static func handle() {
 
@@ -53,7 +57,7 @@ struct FullStopHandler {
 
 			// Unpin:
 			for node in this.stop_dict.keys {
-				node.physicsBody?.pinned = false
+				OOP --> node.physicsBody?.pinned = false
 
 				// Check for forces:
 				if this.stop_dict[node] != nil {
