@@ -46,6 +46,7 @@ class Pinball {
 
 		// Sudden death round is ultra-multiball madness!
 		self.radius = size.toRadius ()
+		
 		self.node = SKShapeNode ( circleOfRadius: self.radius );
 		_ = node
 				    .name = "My Pinball";
@@ -270,7 +271,7 @@ class GameScene: SKScene {
 				label.text = "\(n.position.y)"
 				n.physicsBody?.fullStop( gFSDict )
 				n.position = self.center
-				n.physicsBody?.applyForce ( up )
+				n.physicsBody!.applyForce(nextForce: up)
 			}
 		}
 	}

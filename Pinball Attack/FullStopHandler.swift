@@ -11,7 +11,9 @@ extension SKPhysicsBody {
 
 	/// If pinned Q the next force, else just do the force:
 	func applyForce( nextForce force: CGVector, gfs_dict: FSDict = gFSDict ) {
-		if self.pinned { FullStopHandler.queueForce( willAppy: force, onNode: self.node!, fromDict: gfs_dict ) }
+		if self.pinned {
+			gFSDict = FullStopHandler.queueForce( willAppy: force, onNode: self.node!, fromDict: gfs_dict )
+		}
 		else { self.applyForce( force ) }
 	}
 
@@ -29,8 +31,10 @@ struct FullStopHandler {
 	static func queueForce( willAppy next_force: CGVector, onNode node: SKNode, fromDict fs_dict: FSDict)
 					-> FSDict {
 
-		// Check if empty:
-		if fs_dict[node] == nil {
+		// Check if empty then create value:
+		if fs_dict[node]! == nil {
+			print("was empty : \(fs_dict[node]!)")
+			// TODO: Again, figure out exactly why this isn"t working and use my [safe:] in future
 			var new_dict = fs_dict
 			new_dict.updateValue( [next_force], forKey: node )
 
@@ -39,6 +43,7 @@ struct FullStopHandler {
 
 		// Append if not:
 		else {
+			print("was not : \(fs_dict[node]!)")
 			var new_vector_array = fs_dict[node]!
 			new_vector_array!.append( next_force )
 
@@ -80,7 +85,11 @@ struct FullStopHandler {
 		}
 
 		// Early return if no entries:
-		guard fs_dict.count > 0 else { return fs_dict }
+		guard fs_dict.count > 0 else {
+
+
+			return fs_dict
+		}
 
 		// Unpin (keys):
 		for node in fs_dict.keys { OOP --> unpinThenApplyStoredForces( fs_dict[node]!, node ) }
