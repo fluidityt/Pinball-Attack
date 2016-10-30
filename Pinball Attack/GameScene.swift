@@ -25,35 +25,79 @@ var gView:  SKView?
 
 class Pinball {
 
+	var storedForces: [CGVector] = []
 
-	var addToCheck: Bool          /*-*/ { get { return self.addToCheck } set {} } /*_*/
+	func applyQueuedForces() {
+		//1. Checks if empty
+		//2. Return if empty
+		//3. Iterate [forces]
+		//4. Apply [forces]
 
-	var nextForces: [CGVector] = []
-
-	/** Fileprivate checks self against global and adds if needed: */
-	private func addToChecklist(inout noded: [Pinball]) {
-		for node in noded {
-			if node === self { () }
-			else { noded.append(self) }
+		//1
+		if self.storedForces.isEmpty {
+			print( "error" );
+			//2
+			return
+		}
+		//3
+		for force in storedForces {
+			//4
+			self.node.physicsBody?.applyForce( force )
 		}
 	}
 
-	/** Checks if pinned.. if yes, puts in NextForces */
-	func applyForce( force: CGVector, inout checkList gnodes_to_check: [Pinball] ) {
-		/* TODO: Why can't I put this in the fucking default prams? */
-		addToChecklist(&gnodes_to_check)
+	func applyForce( force: CGVector ) {
+		//1. Check if pinned
+		//2. pb.applyForce() if not
+		//3. self.storeForce() if so
 
-		let pb = self.node.physicsBody!
-		pb.pinned ? self.nextForces.append( force ) : pb.applyForce( force )
+		//1
+		if self.node.physicsBody?.pinned == false {
+			//2
+			self.node.physicsBody?.applyForce( <#T##force: CGVector###> )
+		}
+		//3
+		self.storedForces.append( force )
+
 	}
 
-	func stop(inout checkList gnodes_to_check: [Pinball]) {
-		//addToChecklist(&gnodes_to_check)
-		gNodesToCheck.append(self)
-		
-		let pb = self.node.physicsBody!
-		pb.pinned = true
+	func stop() {
+		//1. Make self pinned
+
+		//1
+		self.node.physicsBody?.pinned = true
 	}
+
+	func update() {
+
+		//1. Check if pinned
+		//2. Unpin if needed
+		//3. Check if there are stored forces
+		//4. Return if no forces
+		//5. Iterate if are
+		//6. Apply any stored forces
+		//7. Remove any stored forces
+
+		//1
+		if self.node.physicsBody?.pinned == true {
+			//2
+			self.node.physicsBody?.pinned = false
+		}
+
+		//3
+		if self.storedForces.isEmpty { return }
+
+		//
+		for force in self.storedForces
+
+
+
+
+
+
+
+	}
+
 
 	enum Size: CGFloat {
 
@@ -244,7 +288,7 @@ class GameScene: SKScene {
 		// TODO: APPARENTLY EVERYTHING NEEDS TO BE SOME FUNCTION OF SCREEN SIZE...
 		let down = CGVector ( dx: 0, dy: -20000 )
 
-		n!.applyForce(down, checkList: &gNodesToCheck)
+		//n!.applyForce(down, checkList: &gNodesToCheck)
 
 		for touch in touches {
 			/*
@@ -303,7 +347,7 @@ class GameScene: SKScene {
 			// current testing:
 			if n.position.y <= self.frame.minY {
 				n.position = self.center
-				ball?.stop(checkList: &gNodesToCheck)
+				//ball?.stop(checkList: &gNodesToCheck)
 			}
 		}
 	}

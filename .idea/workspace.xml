@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aed8aa68-adb4-439c-bdab-3d53a2c74689" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack.xcodeproj/xcuserdata/dudeguy.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/Pinball Attack.xcodeproj/xcuserdata/dudeguy.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" afterPath="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/GameScene.swift" afterPath="$PROJECT_DIR$/Pinball Attack/GameScene.swift" />
     </list>
@@ -16,7 +17,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_92b3e50ff514562c92b5fd9b470fcf5f7d3ce52d" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
   <component name="FavoritesManager">
     <favorites_list name="Pinball Attack" />
   </component>
@@ -25,29 +26,24 @@
       <file leaf-file-name="GameScene.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+            <state relative-caret-position="394">
+              <caret line="78" column="7" lean-forward="false" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
               <folding>
                 <element signature="e#247#274#0" expanded="true" />
-                <element signature="e#448#478#0" expanded="true" />
-                <element signature="e#530#595#0" expanded="true" />
-                <element signature="e#597#737#0" expanded="true" />
-                <element signature="e#740#792#0" expanded="true" />
-                <element signature="e#794#1083#0" expanded="true" />
-                <element signature="e#877#939#0" expanded="true" />
-                <element signature="e#1322#1595#0" expanded="true" />
-                <element signature="e#1663#2222#0" expanded="true" />
-                <element signature="e#2294#2357#0" expanded="true" />
-                <element signature="e#2360#2419#0" expanded="true" />
-                <element signature="e#2703#4098#0" expanded="true" />
-                <element signature="e#4098#4109#0" expanded="true" />
-                <element signature="e#4234#4457#0" expanded="true" />
-                <element signature="e#4603#5196#0" expanded="true" />
-                <element signature="e#5080#5193#0" expanded="true" />
-                <element signature="e#5209#6508#0" expanded="true" />
-                <element signature="e#5561#6501#0" expanded="true" />
-                <element signature="e#6511#7013#0" expanded="true" />
-                <marker date="1477836523000" expanded="false" signature="6969:7013" ph="{...}" />
+                <element signature="e#963#987#2" expanded="false" />
+                <marker date="1477866528000" expanded="false" signature="1683:1877" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="1999:2504" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="2618:2639" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="2663:2701" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="3097:4380" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="4380:4391" ph="/*...*/" />
+                <marker date="1477866528000" expanded="false" signature="4568:4739" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="4930:5478" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="5362:5475" ph="/*...*/" />
+                <marker date="1477866528000" expanded="false" signature="5571:6792" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="5845:6785" ph="/*...*/" />
+                <marker date="1477866528000" expanded="false" signature="6848:7299" ph="{...}" />
+                <marker date="1477866528000" expanded="false" signature="7414:7425" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -262,12 +258,14 @@
       <workItem from="1477793159973" duration="3702000" />
       <workItem from="1477797351805" duration="17158000" />
       <workItem from="1477826400127" duration="6514000" />
+      <workItem from="1477863211999" duration="782000" />
+      <workItem from="1477864669106" duration="854000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28213000" />
+    <option name="totallyTimeSpent" value="29849000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -285,20 +283,20 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7983425" sideWeight="0.4939394" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3046875" sideWeight="0.5060606" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3237519" sideWeight="0.6560773" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28623718" sideWeight="0.34392264" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -338,11 +336,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Pinball Attack/GameScene.swift</url>
-          <line>46</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Pinball Attack/Config.swift</url>
           <line>33</line>
           <option name="timeStamp" value="4" />
@@ -358,27 +351,59 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding>
+            <element signature="e#247#274#0" expanded="true" />
+            <element signature="e#963#987#2" expanded="false" />
+            <marker date="1477866528000" expanded="false" signature="1683:1877" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="1999:2504" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2618:2639" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2663:2701" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="3097:4380" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4380:4391" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="4568:4739" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4930:5478" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5362:5475" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="5571:6792" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5845:6785" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="6848:7299" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="7414:7425" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+          <folding>
+            <element signature="e#247#274#0" expanded="true" />
+            <element signature="e#963#987#2" expanded="false" />
+            <marker date="1477866528000" expanded="false" signature="1683:1877" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="1999:2504" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2618:2639" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2663:2701" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="3097:4380" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4380:4391" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="4568:4739" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4930:5478" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5362:5475" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="5571:6792" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5845:6785" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="6848:7299" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="7414:7425" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-          <folding>
-            <marker date="1477836542000" expanded="true" signature="0:29" ph="import ..." />
-            <marker date="1477836542000" expanded="true" signature="139:172" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="190:1107" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="230:271" ph="{...}" />
-            <marker date="1477836542000" expanded="true" signature="236:262" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="316:356" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="322:347" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="365:430" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="486:543" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="546:598" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="681:907" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="685:747" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="966:1055" ph="{...}" />
-            <marker date="1477836542000" expanded="true" signature="1070:1105" ph="{...}" />
-            <marker date="1477836542000" expanded="true" signature="202:810" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -388,25 +413,20 @@
           <caret line="137" column="16" lean-forward="false" selection-start-line="137" selection-start-column="16" selection-end-line="180" selection-end-column="52" />
           <folding>
             <element signature="e#247#274#0" expanded="true" />
-            <element signature="e#448#478#0" expanded="true" />
-            <element signature="e#530#595#0" expanded="true" />
-            <element signature="e#597#737#0" expanded="true" />
-            <element signature="e#740#792#0" expanded="true" />
-            <element signature="e#794#1083#0" expanded="true" />
-            <element signature="e#877#939#0" expanded="true" />
-            <element signature="e#1322#1595#0" expanded="true" />
-            <element signature="e#1663#2222#0" expanded="true" />
-            <element signature="e#2294#2357#0" expanded="true" />
-            <element signature="e#2360#2419#0" expanded="true" />
-            <element signature="e#2703#4098#0" expanded="true" />
-            <element signature="e#4098#4109#0" expanded="true" />
-            <element signature="e#4234#4457#0" expanded="true" />
-            <element signature="e#4603#5196#0" expanded="true" />
-            <element signature="e#5080#5193#0" expanded="true" />
-            <element signature="e#5209#6508#0" expanded="true" />
-            <element signature="e#5561#6501#0" expanded="true" />
-            <element signature="e#6511#7013#0" expanded="true" />
-            <marker date="1477836523000" expanded="false" signature="6969:7013" ph="{...}" />
+            <element signature="e#963#987#2" expanded="false" />
+            <marker date="1477866528000" expanded="false" signature="1683:1877" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="1999:2504" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2618:2639" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2663:2701" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="3097:4380" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4380:4391" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="4568:4739" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4930:5478" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5362:5475" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="5571:6792" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5845:6785" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="6848:7299" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="7414:7425" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -443,53 +463,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="80">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1477836542000" expanded="true" signature="0:29" ph="import ..." />
-            <marker date="1477836542000" expanded="true" signature="139:172" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="190:1107" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="230:271" ph="{...}" />
-            <marker date="1477836542000" expanded="true" signature="236:262" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="316:356" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="322:347" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="365:430" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="486:543" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="546:598" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="681:907" ph="{...}" />
-            <marker date="1477836542000" expanded="false" signature="685:747" ph="/*...*/" />
-            <marker date="1477836542000" expanded="true" signature="966:1055" ph="{...}" />
-            <marker date="1477836542000" expanded="true" signature="1070:1105" ph="{...}" />
-            <marker date="1477836542000" expanded="true" signature="202:810" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+        <state relative-caret-position="394">
+          <caret line="78" column="7" lean-forward="false" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
           <folding>
             <element signature="e#247#274#0" expanded="true" />
-            <element signature="e#448#478#0" expanded="true" />
-            <element signature="e#530#595#0" expanded="true" />
-            <element signature="e#597#737#0" expanded="true" />
-            <element signature="e#740#792#0" expanded="true" />
-            <element signature="e#794#1083#0" expanded="true" />
-            <element signature="e#877#939#0" expanded="true" />
-            <element signature="e#1322#1595#0" expanded="true" />
-            <element signature="e#1663#2222#0" expanded="true" />
-            <element signature="e#2294#2357#0" expanded="true" />
-            <element signature="e#2360#2419#0" expanded="true" />
-            <element signature="e#2703#4098#0" expanded="true" />
-            <element signature="e#4098#4109#0" expanded="true" />
-            <element signature="e#4234#4457#0" expanded="true" />
-            <element signature="e#4603#5196#0" expanded="true" />
-            <element signature="e#5080#5193#0" expanded="true" />
-            <element signature="e#5209#6508#0" expanded="true" />
-            <element signature="e#5561#6501#0" expanded="true" />
-            <element signature="e#6511#7013#0" expanded="true" />
-            <marker date="1477836523000" expanded="false" signature="6969:7013" ph="{...}" />
+            <element signature="e#963#987#2" expanded="false" />
+            <marker date="1477866528000" expanded="false" signature="1683:1877" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="1999:2504" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2618:2639" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="2663:2701" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="3097:4380" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4380:4391" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="4568:4739" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="4930:5478" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5362:5475" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="5571:6792" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="5845:6785" ph="/*...*/" />
+            <marker date="1477866528000" expanded="false" signature="6848:7299" ph="{...}" />
+            <marker date="1477866528000" expanded="false" signature="7414:7425" ph="//..." />
           </folding>
         </state>
       </provider>

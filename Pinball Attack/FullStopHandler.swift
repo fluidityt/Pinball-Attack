@@ -21,17 +21,12 @@ func updateStuff( inout gCheckList gnodes_to_check: [Pinball] ) {
 		
 		// Unpin:
 		guard !node.node.physicsBody!.pinned else {
-			print("should be false : \(node.node.physicsBody!)")
+			print("should be false : \(node.node.physicsBody!.pinned)")
 			continue
 		}
-			print("should be true : \(node.node.physicsBody!)")
+			print("should be true : \(node.node.physicsBody!.pinned)")
 		node.node.physicsBody!.pinned = false
-		
-		// Apply forces:
-		guard  !node.nextForces.isEmpty else { return }
-		for force in node.nextForces { node.node.physicsBody?.applyForce( force ) }
-
-		node.nextForces.removeAll()
 	}
+		
 }
 
