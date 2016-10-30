@@ -3,24 +3,26 @@ import UIKit
 
 
 
-var gFullStop = FullStopHandler.full_stop_instance // hi
+var gFSDict: [SKNode: [CGVector]?] = [:]
 
 struct FullStopHandler {
 
 	// Inits:
-	private static var full_stop_instance = FullStopHandler
-	let stop_dict: [SKNode: [CGVector]?]
-	private init() {} // protected
-	typealias this = FullStopHandler;
+	// See also, gFSDict, and FullStopDict
+	typealias FullStopDict = [SKNode: [CGVector]?]
+	private init(){}
 
-	static func queueForce( next_force: CGVector, to node: SKNode, FP object: FullStopHandler )
-					-> FullStopHandler {
+	static func queueForce( next_force: CGVector, to node: SKNode, FP fs_dict: [SKNode: [CGVector]?] )
+					-> [SKNode: [CGVector]?] {
 
 		// Check if empty:
-		if object.stop_dict[node] == nil {
-			var new_dict = object.stop_dict
-			return this( stop_dict: new_dict.updateValue( [next_force], forKey: node ) )
+		if fs_dict[node] == nil {
+			var new_dict = fs_dict
+			new_dict.updateValue( [next_force], forKey: node )
+
+			return fs_dict
 		}
+
 
 		// Append if not:
 		else {
