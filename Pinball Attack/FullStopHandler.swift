@@ -53,28 +53,25 @@ struct FullStopHandler {
 
 	static func handle(fs_dict: FSDict) -> FSDict {
 
+		let unpinThenApplyStoredForces = { (forces: [CGVector]?, node: SKNode) in
 
-		// Unpin, then apply any Qd forces:
-		guard fs_dict.count == 0 else {
-
-			// Unpin (keys):
-			for node in fs_dict.keys {
-				OOP --> (node.physicsBody?.pinned = false)
+			// Unpin:
+			node.physicsBody?.pinned = false
 
 				// Check for forces (value):
 				if fs_dict[node] != nil {
 
 					// Apply forces:
-					let forces_array = fs_dict[node]!
-
-					for force in forces_array! {
-						node.physicsBody?.applyForce( force )
-					}
+					for force in forces! { node.physicsBody?.applyForce( force ) }
 				}
-			}
-
-			OOP --> this.stop_dict.removeAll()
 		}
-		
-	} // Called in update
+
+		// Early return if no entries:
+		guard fs_dict.count > 0 else { return fs_dict }
+
+		// Unpin (keys):
+		for node in fs_dict.keys { OOP --> unpinThenApplyStoredForces( fs_dict[node]!, node ) }
+
+		return [:]
+	} /* Called in update() */
 }

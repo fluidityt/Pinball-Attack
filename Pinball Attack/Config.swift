@@ -1,5 +1,5 @@
 //
-//  Game Board.swift
+//  Config.swift
 //  Pinball Attack
 //
 //  Created by Dude Guy  on 10/27/16.
