@@ -337,11 +337,14 @@ class GameScene: SKScene {
 	}
 
 	func resetBall() {
-		/*if n.position.y >= self.frame.maxY { n.position = self.center }*/
 
 		let up = CGVector( dx: 0, dy: 2000 )
 		let n = ball!.node
 
+		if n.position.y >= self.frame.maxY {
+			n.position = self.center
+			ball!.stop()
+		}
 		if n.position.y <= self.frame.minY {
 			n.position = self.center
 			ball!.stop()
