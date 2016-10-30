@@ -12,9 +12,9 @@ func updateStuff( inout gCheckList gnodes_to_check: [Pinball] ) {
 	if counter > 58 { print(gnodes_to_check) }
 	// Nothing to do:
 	guard !gnodes_to_check.isEmpty else {
-		print(" i hate my life")
 		return
 	}
+	print(" i love my life")
 
 	// Act then reset:
 	for node in gnodes_to_check {

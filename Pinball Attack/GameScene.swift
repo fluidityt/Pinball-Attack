@@ -48,8 +48,9 @@ class Pinball {
 	}
 
 	func stop(inout checkList gnodes_to_check: [Pinball]) {
-		addToChecklist(&gnodes_to_check)
-
+		//addToChecklist(&gnodes_to_check)
+		gNodesToCheck.append(self)
+		
 		let pb = self.node.physicsBody!
 		pb.pinned = true
 	}
