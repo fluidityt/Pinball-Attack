@@ -1,6 +1,5 @@
 import SpriteKit
 import UIKit
-import Foundation
 
 
 
@@ -14,8 +13,8 @@ struct FullStopHandler {
 	private init() {}
 	typealias FSDict = [SKNode: [CGVector]?]
 
-	static func queueForce( next_force: CGVector, node: SKNode, fs_dict: [SKNode: [CGVector]?] )
-					-> [SKNode: [CGVector]?] {
+	static func queueForce( next_force: CGVector, node: SKNode, fs_dict: FSDict)
+					-> FSDict {
 
 		// Check if empty:
 		if fs_dict[node] == nil {
@@ -38,8 +37,8 @@ struct FullStopHandler {
 	} /*Called in SKPB*/
 
 
-	static func stop( node: SKNode, fs_dict: [SKNode: [CGVector]?] )
-					-> [SKNode: [CGVector]?] {
+	static func stop( node: SKNode, fs_dict: FSDict )
+					-> FSDict {
 
 		guard !node.physicsBody!.pinned else { return fs_dict }
 
