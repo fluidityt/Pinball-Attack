@@ -28,7 +28,7 @@ class Pinball {
 
 	var addToCheck: Bool          /*-*/ { get { return self.addToCheck } set {} } /*_*/
 
-	var nextForces: [CGVector]    /*-*/ {	get { return self.nextForces} set {} } /*_*/
+	var nextForces: [CGVector] = []
 
 	/** Fileprivate checks self against global and adds if needed: */
 	private func addToChecklist(inout noded: [Pinball]) {
@@ -52,13 +52,8 @@ class Pinball {
 		addToChecklist(&gnodes_to_check)
 
 		let pb = self.node.physicsBody!
-		pb.pinned = false
+		pb.pinned = true
 	}
-
-	func kill() {
-		gNodesToCheck.remove( self )
-	}
-
 
 	enum Size: CGFloat {
 
@@ -243,7 +238,7 @@ class GameScene: SKScene {
 	override func touchesBegan ( touches: Set<UITouch>, withEvent event: UIEvent? ) {
 
 		taps += 1;
-		let n = ball?.node;
+		let n = ball
 		let up = CGVector ( dx: 0, dy: 2000 )
 
 		// TODO: APPARENTLY EVERYTHING NEEDS TO BE SOME FUNCTION OF SCREEN SIZE...
@@ -301,14 +296,14 @@ class GameScene: SKScene {
 
 		resetBall:do {
 
-			let n = ball!.node;
+			let n = ball!.node
 
 			if n.position.y >= self.frame.maxY {				n.position = self.center			}
 			
 			// current testing:
 			if n.position.y <= self.frame.minY {
 				n.position = self.center
-				n.stop(checkList: &gNodesToCheck)
+				ball?.stop(checkList: &gNodesToCheck)
 			}
 		}
 	}
