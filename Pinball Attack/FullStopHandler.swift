@@ -2,27 +2,23 @@ import SpriteKit
 import UIKit
 
 
-
 var gFSDict: [SKNode: [CGVector]?] = [:]
 typealias FSDict = [SKNode: [CGVector]?]
+func grabAGlobe<T>(inout any: T) -> T {	return any }
 
 /* For use in FullStopHandler: */
 extension SKPhysicsBody {
 
-
 	/// If pinned Q the next force, else just do the force:
-	func applyForce( nextForce force: CGVector, fs_dict: FSDict = gFSDict ) {
-
-		if self.pinned { FullStopHandler.queueForce( willAppy: force, onNode: self.node!, fromDict: fs_dict ) }
-
+	func applyForce( nextForce force: CGVector, gfs_dict: FSDict = gFSDict ) {
+		if self.pinned { FullStopHandler.queueForce( willAppy: force, onNode: self.node!, fromDict: gfs_dict ) }
 		else { self.applyForce( force ) }
-
-	}
-	// Stop the node NOW, then add it to a Q to be unpinned...
-	func fullStop() {
-		FullStopHandler.stop( self.node!, fs_dict: )
 	}
 
+	/// Stop the node NOW, then add it to a Q to be unpinned...
+	func fullStop( gfs_dict: FSDict ) {
+		gFSDict = FullStopHandler.stop( self.node!, fs_dict: gfs_dict )
+	}
 }
 
 /* Uses gFSDict and the above extension: */
@@ -75,8 +71,8 @@ struct FullStopHandler {
 			// Unpin:
 			node.physicsBody?.pinned = false
 
-				// Check for forces (value):
-				if fs_dict[node] != nil {
+			// Check for forces (value): // TODO: UNDERSTAND WHY ADDING AN EXCLAIM FIXED THIS
+				if fs_dict[node]! != nil {
 
 					// Apply forces:
 					for force in forces! { node.physicsBody?.applyForce( force ) }

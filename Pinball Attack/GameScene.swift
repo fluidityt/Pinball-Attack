@@ -15,6 +15,8 @@ import UIKit
 
 
 
+// TODO: ADD NAMES TO NODES
+
 // ***************************** \\
 var gScene: SKScene?
 var gView:  SKView?
@@ -46,7 +48,9 @@ class Pinball {
 		self.radius = size.toRadius ()
 		self.node = SKShapeNode ( circleOfRadius: self.radius );
 		_ = node
-						.position = scene.center;
+				    .name = "My Pinball";
+		_ = node
+				    .position = scene.center;
 		_ = node
 						.fillColor = SKColor.blueColor ();
 		_ = node
@@ -246,7 +250,7 @@ class GameScene: SKScene {
 
 	override func update ( currentTime: CFTimeInterval ) {
 
-		FullStopHandler.handle(gFSDict) // NEEDS TESTING
+		gFSDict = FullStopHandler.handle( gFSDict ) // NEEDS TESTING
 
 		let up = CGVector ( dx: 0, dy: 2000 )
 
@@ -264,7 +268,7 @@ class GameScene: SKScene {
 			if n.position.y >= self.frame.maxY { n.position = self.center }
 			if n.position.y <= self.frame.minY {
 				label.text = "\(n.position.y)"
-				n.physicsBody?.fullStop ()
+				n.physicsBody?.fullStop( gFSDict )
 				n.position = self.center
 				n.physicsBody?.applyForce ( up )
 			}

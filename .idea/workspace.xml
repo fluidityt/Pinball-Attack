@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aed8aa68-adb4-439c-bdab-3d53a2c74689" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/Config.swift" afterPath="$PROJECT_DIR$/Pinball Attack/Config.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack.xcodeproj/xcuserdata/dudeguy.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/Pinball Attack.xcodeproj/xcuserdata/dudeguy.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" afterPath="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/GameScene.swift" afterPath="$PROJECT_DIR$/Pinball Attack/GameScene.swift" />
     </list>
@@ -17,28 +17,20 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_91bb79fa2487585cdd8ea96a4980d8c85cc9c237" />
   <component name="FavoritesManager">
     <favorites_list name="Pinball Attack" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FullStopHandler.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
+      <file leaf-file-name="GameScene.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            <state relative-caret-position="570">
+              <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <element signature="e#116#149#0" expanded="true" />
-                <element signature="e#236#457#0" expanded="true" />
-                <element signature="e#682#1178#0" expanded="true" />
-                <element signature="e#1201#1464#0" expanded="true" />
-                <element signature="e#1488#2038#0" expanded="true" />
-                <marker date="1477814597000" expanded="false" signature="591:634" ph="/*...*/" />
-                <marker date="1477814597000" expanded="true" signature="661:680" ph="..." />
-                <marker date="1477814597000" expanded="false" signature="1179:1197" ph="/*...*/" />
-                <marker date="1477814597000" expanded="false" signature="1465:1485" ph="/*...*/" />
+                <element signature="e#247#274#0" expanded="true" />
+                <marker date="1477816872000" expanded="false" signature="4601:5573" ph="/*...*/" />
               </folding>
             </state>
           </provider>
@@ -60,11 +52,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Pinball Attack/GameScene.swift" />
         <option value="$PROJECT_DIR$/Pinball Attack/File.swift" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift" />
         <option value="$PROJECT_DIR$/Pinball Attack/Config.swift" />
         <option value="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" />
+        <option value="$PROJECT_DIR$/Pinball Attack/GameScene.swift" />
       </list>
     </option>
   </component>
@@ -249,13 +241,13 @@
       <updated>1477791924791</updated>
       <workItem from="1477791930737" duration="839000" />
       <workItem from="1477793159973" duration="3702000" />
-      <workItem from="1477797351805" duration="15394000" />
+      <workItem from="1477797351805" duration="16547000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19935000" />
+    <option name="totallyTimeSpent" value="21088000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -327,7 +319,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Pinball Attack/GameScene.swift</url>
-          <line>46</line>
+          <line>48</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -337,12 +329,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Pinball Attack/GameScene.swift</url>
-          <line>62</line>
+          <line>66</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Pinball Attack/GameScene.swift</url>
-          <line>21</line>
+          <line>23</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
@@ -356,31 +348,8 @@
         <state relative-caret-position="1918">
           <caret line="137" column="16" lean-forward="false" selection-start-line="137" selection-start-column="16" selection-end-line="180" selection-end-column="52" />
           <folding>
-            <marker date="1477813747000" expanded="false" signature="0:212" ph="//..." />
-            <marker date="1477813747000" expanded="false" signature="214:243" ph="import ..." />
-            <marker date="1477813747000" expanded="true" signature="376:1289" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="399:709" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="512:706" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="828:1287" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1356:3176" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="1401:1422" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="1446:1484" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1509:1631" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1525:1547" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1561:1586" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1602:1627" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="1880:3163" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="3163:3174" ph="/*...*/" />
-            <marker date="1477813747000" expanded="true" signature="3229:3524" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="3351:3522" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="3654:6079" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="3713:4261" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="4145:4258" ph="/*...*/" />
-            <marker date="1477813747000" expanded="false" signature="4354:5502" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="4529:5501" ph="/*...*/" />
-            <marker date="1477813747000" expanded="false" signature="4555:5495" ph="/*...*/" />
-            <marker date="1477813747000" expanded="false" signature="5558:6077" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="6191:6202" ph="//..." />
+            <element signature="e#247#274#0" expanded="true" />
+            <marker date="1477816872000" expanded="false" signature="4601:5573" ph="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -398,40 +367,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1477813747000" expanded="false" signature="0:212" ph="//..." />
-            <marker date="1477813747000" expanded="false" signature="214:243" ph="import ..." />
-            <marker date="1477813747000" expanded="true" signature="376:1289" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="399:709" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="512:706" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="828:1287" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1356:3176" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="1401:1422" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="1446:1484" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1509:1631" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1525:1547" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1561:1586" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="1602:1627" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="1880:3163" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="3163:3174" ph="/*...*/" />
-            <marker date="1477813747000" expanded="true" signature="3229:3524" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="3351:3522" ph="{...}" />
-            <marker date="1477813747000" expanded="true" signature="3654:6079" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="3713:4261" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="4145:4258" ph="/*...*/" />
-            <marker date="1477813747000" expanded="false" signature="4354:5502" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="4529:5501" ph="/*...*/" />
-            <marker date="1477813747000" expanded="false" signature="4555:5495" ph="/*...*/" />
-            <marker date="1477813747000" expanded="false" signature="5558:6077" ph="{...}" />
-            <marker date="1477813747000" expanded="false" signature="6191:6202" ph="//..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -473,19 +408,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#116#149#0" expanded="true" />
-            <element signature="e#236#457#0" expanded="true" />
-            <element signature="e#682#1178#0" expanded="true" />
-            <element signature="e#1201#1464#0" expanded="true" />
-            <element signature="e#1488#2038#0" expanded="true" />
-            <marker date="1477814597000" expanded="false" signature="591:634" ph="/*...*/" />
-            <marker date="1477814597000" expanded="true" signature="661:680" ph="..." />
-            <marker date="1477814597000" expanded="false" signature="1179:1197" ph="/*...*/" />
-            <marker date="1477814597000" expanded="false" signature="1465:1485" ph="/*...*/" />
+            <marker date="1477816491000" expanded="true" signature="0:29" ph="import ..." />
+            <marker date="1477816491000" expanded="true" signature="152:166" ph="{...}" />
+            <marker date="1477816491000" expanded="true" signature="168:201" ph="/*...*/" />
+            <marker date="1477816491000" expanded="true" signature="226:677" ph="{...}" />
+            <marker date="1477816491000" expanded="true" signature="360:507" ph="{...}" />
+            <marker date="1477816491000" expanded="true" signature="605:675" ph="{...}" />
+            <marker date="1477816491000" expanded="true" signature="679:722" ph="/*...*/" />
+            <marker date="1477816491000" expanded="true" signature="746:2206" ph="{...}" />
+            <marker date="1477816491000" expanded="true" signature="887:1266" ph="{...}" />
+            <marker date="1477816491000" expanded="true" signature="1267:1285" ph="/*...*/" />
+            <marker date="1477816491000" expanded="true" signature="1354:1552" ph="{...}" />
+            <marker date="1477816491000" expanded="true" signature="1553:1573" ph="/*...*/" />
+            <marker date="1477816491000" expanded="true" signature="1622:2179" ph="{...}" />
+            <marker date="1477816491000" expanded="false" signature="2180:2204" ph="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
+          <folding>
+            <element signature="e#247#274#0" expanded="true" />
+            <marker date="1477816872000" expanded="false" signature="4601:5573" ph="/*...*/" />
           </folding>
         </state>
       </provider>
