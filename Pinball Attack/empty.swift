@@ -57,10 +57,21 @@ func updates() {
 
 	struct Rocket {
 
-		init(oldRocket: Rocket, newPower: Int? = nil, newFR: Int? = nil) {
+		let power:           Int
+		let fires_remaining: Int
 
-			if newPower != nil { self.power = newPower } else { self.power = oldRocket.power }
-			
+		init( oldRocket: Rocket? = nil,
+		      newPower: Int? = nil,
+		      newFR: Int? = nil ) {
+
+
+			if oldRocket == nil {
+				assignDefaults:do {}
+			}
+			else {
+				if newPower != nil { self.power = newPower! }
+				else { self.power = oldRocket.power! }
+			}
 		}
 	}
 }
