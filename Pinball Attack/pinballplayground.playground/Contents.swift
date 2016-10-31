@@ -1,5 +1,7 @@
 //: Playground - noun: a place where people can play
 
+// BATTLE CATS!!
+
 var global: Any
 
 private let globalName = "Flufferton"
@@ -96,8 +98,10 @@ print(fluffy)
 
 var kitty = Cat(fromOldCat: fluffy, age: 34, name: "Kitty")
 
-
+var fluffy = Cat()
 var boots = Cat(fromOldCat: kitty, name: "Boots")
+
+fluffy.fireRocket()
 
 boots ->> boots.fireRocket()
 
