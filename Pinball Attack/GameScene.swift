@@ -22,7 +22,7 @@ var gScene: SKScene?
 var gView:  SKView?
 
 // ***************************** \\
-
+// Put update() in update()
 class Pinball {
 
 	var storedForces: [CGVector] = []
@@ -335,7 +335,6 @@ class GameScene: SKScene {
 			counter = 0
 		}
 	}
-
 	func resetBall() {
 
 		let up = CGVector( dx: 0, dy: 2000 )
@@ -353,9 +352,8 @@ class GameScene: SKScene {
 		}
 	}
 	override func update( currentTime: CFTimeInterval ) {
-		ball!.update()
 		ticker()
-		resetBall()
+		
 
 
 
@@ -364,11 +362,6 @@ class GameScene: SKScene {
 }
 
 
-// Update() globes:
-var taps    = 0
-var label   = SKLabelNode ( text: "0" )
-var counter = 0
-var seconds = 0
 
 
 //

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aed8aa68-adb4-439c-bdab-3d53a2c74689" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pinball Attack/Global.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Pinball Attack/empty.swift" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/timeline.xctimeline" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pinball Attack.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/Config.swift" afterPath="$PROJECT_DIR$/Pinball Attack/Config.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/GameScene.swift" afterPath="$PROJECT_DIR$/Pinball Attack/GameScene.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/Contents.swift" afterPath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/Contents.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/contents.xcplayground" afterPath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/contents.xcplayground" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +23,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_91bb79fa2487585cdd8ea96a4980d8c85cc9c237" />
   <component name="FavoritesManager">
     <favorites_list name="Pinball Attack" />
   </component>
@@ -24,29 +32,17 @@
       <file leaf-file-name="GameScene.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="329" column="37" lean-forward="false" selection-start-line="329" selection-start-column="37" selection-end-line="329" selection-end-column="37" />
+            <state relative-caret-position="226">
+              <caret line="256" column="48" lean-forward="false" selection-start-line="256" selection-start-column="47" selection-end-line="256" selection-end-column="48" />
               <folding>
-                <element signature="e#247#274#0" expanded="true" />
-                <element signature="e#744#1026#0" expanded="true" />
-                <element signature="e#1029#1115#0" expanded="true" />
-                <element signature="e#1118#1659#0" expanded="true" />
-                <element signature="e#1715#1988#0" expanded="true" />
-                <element signature="e#2056#2615#0" expanded="true" />
-                <element signature="e#2687#2750#0" expanded="true" />
-                <element signature="e#2753#2812#0" expanded="true" />
-                <element signature="e#3096#4491#0" expanded="true" />
-                <element signature="e#4491#4502#0" expanded="true" />
-                <element signature="e#4627#4850#0" expanded="true" />
-                <element signature="e#4996#5589#0" expanded="true" />
-                <element signature="e#5473#5586#0" expanded="true" />
-                <element signature="e#5602#6969#0" expanded="true" />
-                <element signature="e#5712#6660#0" expanded="true" />
-                <element signature="e#7009#7100#0" expanded="true" />
-                <element signature="e#7103#7343#0" expanded="true" />
-                <element signature="e#7124#7191#0" expanded="true" />
-                <element signature="e#7345#7430#0" expanded="true" />
-                <marker date="1477867544000" expanded="false" signature="7545:7556" ph="//..." />
+                <element signature="e#418#2644#0" expanded="false" />
+                <element signature="e#1689#2018#0" expanded="false" />
+                <element signature="e#2683#4531#0" expanded="false" />
+                <element signature="e#2854#2986#0" expanded="false" />
+                <element signature="e#2869#2902#0" expanded="false" />
+                <element signature="e#2906#2941#0" expanded="false" />
+                <element signature="e#2945#2982#0" expanded="false" />
+                <element signature="e#4570#4879#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -73,6 +69,7 @@
         <option value="$PROJECT_DIR$/Pinball Attack/Config.swift" />
         <option value="$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift" />
         <option value="$PROJECT_DIR$/Pinball Attack/GameScene.swift" />
+        <option value="$PROJECT_DIR$/Pinball Attack/empty.swift" />
       </list>
     </option>
   </component>
@@ -147,6 +144,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -179,7 +177,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,7 +265,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30593000" />
+    <option name="totallyTimeSpent" value="31480000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -284,7 +281,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2532943" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7983425" sideWeight="0.4939394" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -359,26 +356,14 @@
         <state relative-caret-position="224">
           <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
-            <element signature="e#247#274#0" expanded="true" />
-            <element signature="e#744#1026#0" expanded="true" />
-            <element signature="e#1029#1115#0" expanded="true" />
-            <element signature="e#1118#1659#0" expanded="true" />
-            <element signature="e#1715#1988#0" expanded="true" />
-            <element signature="e#2056#2615#0" expanded="true" />
-            <element signature="e#2687#2750#0" expanded="true" />
-            <element signature="e#2753#2812#0" expanded="true" />
-            <element signature="e#3096#4491#0" expanded="true" />
-            <element signature="e#4491#4502#0" expanded="true" />
-            <element signature="e#4627#4850#0" expanded="true" />
-            <element signature="e#4996#5589#0" expanded="true" />
-            <element signature="e#5473#5586#0" expanded="true" />
-            <element signature="e#5602#6969#0" expanded="true" />
-            <element signature="e#5712#6660#0" expanded="true" />
-            <element signature="e#7009#7100#0" expanded="true" />
-            <element signature="e#7103#7343#0" expanded="true" />
-            <element signature="e#7124#7191#0" expanded="true" />
-            <element signature="e#7345#7430#0" expanded="true" />
-            <marker date="1477867544000" expanded="false" signature="7545:7556" ph="//..." />
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -388,26 +373,14 @@
         <state relative-caret-position="728">
           <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
           <folding>
-            <element signature="e#247#274#0" expanded="true" />
-            <element signature="e#744#1026#0" expanded="true" />
-            <element signature="e#1029#1115#0" expanded="true" />
-            <element signature="e#1118#1659#0" expanded="true" />
-            <element signature="e#1715#1988#0" expanded="true" />
-            <element signature="e#2056#2615#0" expanded="true" />
-            <element signature="e#2687#2750#0" expanded="true" />
-            <element signature="e#2753#2812#0" expanded="true" />
-            <element signature="e#3096#4491#0" expanded="true" />
-            <element signature="e#4491#4502#0" expanded="true" />
-            <element signature="e#4627#4850#0" expanded="true" />
-            <element signature="e#4996#5589#0" expanded="true" />
-            <element signature="e#5473#5586#0" expanded="true" />
-            <element signature="e#5602#6969#0" expanded="true" />
-            <element signature="e#5712#6660#0" expanded="true" />
-            <element signature="e#7009#7100#0" expanded="true" />
-            <element signature="e#7103#7343#0" expanded="true" />
-            <element signature="e#7124#7191#0" expanded="true" />
-            <element signature="e#7345#7430#0" expanded="true" />
-            <marker date="1477867544000" expanded="false" signature="7545:7556" ph="//..." />
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -425,26 +398,14 @@
         <state relative-caret-position="1918">
           <caret line="137" column="16" lean-forward="false" selection-start-line="137" selection-start-column="16" selection-end-line="180" selection-end-column="52" />
           <folding>
-            <element signature="e#247#274#0" expanded="true" />
-            <element signature="e#744#1026#0" expanded="true" />
-            <element signature="e#1029#1115#0" expanded="true" />
-            <element signature="e#1118#1659#0" expanded="true" />
-            <element signature="e#1715#1988#0" expanded="true" />
-            <element signature="e#2056#2615#0" expanded="true" />
-            <element signature="e#2687#2750#0" expanded="true" />
-            <element signature="e#2753#2812#0" expanded="true" />
-            <element signature="e#3096#4491#0" expanded="true" />
-            <element signature="e#4491#4502#0" expanded="true" />
-            <element signature="e#4627#4850#0" expanded="true" />
-            <element signature="e#4996#5589#0" expanded="true" />
-            <element signature="e#5473#5586#0" expanded="true" />
-            <element signature="e#5602#6969#0" expanded="true" />
-            <element signature="e#5712#6660#0" expanded="true" />
-            <element signature="e#7009#7100#0" expanded="true" />
-            <element signature="e#7103#7343#0" expanded="true" />
-            <element signature="e#7124#7191#0" expanded="true" />
-            <element signature="e#7345#7430#0" expanded="true" />
-            <marker date="1477867544000" expanded="false" signature="7545:7556" ph="//..." />
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -464,17 +425,12 @@
         <state relative-caret-position="261">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
-            <marker date="1477813637000" expanded="false" signature="0:135" ph="//..." />
-            <marker date="1477813637000" expanded="false" signature="137:166" ph="import ..." />
-            <marker date="1477813637000" expanded="true" signature="221:347" ph="{...}" />
-            <marker date="1477813637000" expanded="true" signature="376:625" ph="{...}" />
-            <marker date="1477813637000" expanded="true" signature="652:776" ph="{...}" />
-            <marker date="1477813637000" expanded="true" signature="797:897" ph="{...}" />
-            <marker date="1477813637000" expanded="true" signature="820:895" ph="{...}" />
-            <marker date="1477813637000" expanded="false" signature="828:892" ph="{...}" />
-            <marker date="1477813637000" expanded="false" signature="899:923" ph="/*...*/" />
-            <marker date="1477813637000" expanded="false" signature="988:1002" ph="{...}" />
-            <marker date="1477813637000" expanded="true" signature="1053:1057" ph="{...}" />
+            <marker date="1477883476000" expanded="false" signature="0:135" ph="//..." />
+            <marker date="1477883476000" expanded="false" signature="137:166" ph="import ..." />
+            <marker date="1477883476000" expanded="true" signature="246:372" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="401:650" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="677:801" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="799:801" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -489,29 +445,270 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="329" column="37" lean-forward="false" selection-start-line="329" selection-start-column="37" selection-end-line="329" selection-end-column="37" />
+        <state relative-caret-position="334">
+          <caret line="71" column="23" lean-forward="true" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
           <folding>
-            <element signature="e#247#274#0" expanded="true" />
-            <element signature="e#744#1026#0" expanded="true" />
-            <element signature="e#1029#1115#0" expanded="true" />
-            <element signature="e#1118#1659#0" expanded="true" />
-            <element signature="e#1715#1988#0" expanded="true" />
-            <element signature="e#2056#2615#0" expanded="true" />
-            <element signature="e#2687#2750#0" expanded="true" />
-            <element signature="e#2753#2812#0" expanded="true" />
-            <element signature="e#3096#4491#0" expanded="true" />
-            <element signature="e#4491#4502#0" expanded="true" />
-            <element signature="e#4627#4850#0" expanded="true" />
-            <element signature="e#4996#5589#0" expanded="true" />
-            <element signature="e#5473#5586#0" expanded="true" />
-            <element signature="e#5602#6969#0" expanded="true" />
-            <element signature="e#5712#6660#0" expanded="true" />
-            <element signature="e#7009#7100#0" expanded="true" />
-            <element signature="e#7103#7343#0" expanded="true" />
-            <element signature="e#7124#7191#0" expanded="true" />
-            <element signature="e#7345#7430#0" expanded="true" />
-            <marker date="1477867544000" expanded="false" signature="7545:7556" ph="//..." />
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1918">
+          <caret line="137" column="16" lean-forward="false" selection-start-line="137" selection-start-column="16" selection-end-line="180" selection-end-column="52" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/File.swift" />
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/File.swift" />
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/File.swift" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/Config.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <marker date="1477883476000" expanded="false" signature="0:135" ph="//..." />
+            <marker date="1477883476000" expanded="false" signature="137:166" ph="import ..." />
+            <marker date="1477883476000" expanded="true" signature="246:372" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="401:650" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="677:801" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="799:801" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1918">
+          <caret line="137" column="16" lean-forward="false" selection-start-line="137" selection-start-column="16" selection-end-line="180" selection-end-column="52" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/File.swift" />
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/File.swift" />
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/File.swift" />
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/FullStopHandler.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/Config.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <marker date="1477883476000" expanded="false" signature="0:135" ph="//..." />
+            <marker date="1477883476000" expanded="false" signature="137:166" ph="import ..." />
+            <marker date="1477883476000" expanded="true" signature="246:372" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="401:650" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="677:801" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="799:801" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/empty.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <marker date="1477886636000" expanded="true" signature="0:29" ph="import ..." />
+            <marker date="1477886636000" expanded="true" signature="86:91" ph="{...}" />
+            <marker date="1477886636000" expanded="true" signature="103:108" ph="{...}" />
+            <marker date="1477886636000" expanded="true" signature="125:130" ph="{...}" />
+            <marker date="1477886636000" expanded="true" signature="196:382" ph="{...}" />
+            <marker date="1477886636000" expanded="true" signature="303:373" ph="{...}" />
+            <marker date="1477886636000" expanded="true" signature="348:353" ph="{...}" />
+            <marker date="1477886636000" expanded="true" signature="384:486" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/Global.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1477883476000" expanded="true" signature="0:135" ph="//..." />
+            <marker date="1477883476000" expanded="false" signature="137:166" ph="import ..." />
+            <marker date="1477883476000" expanded="true" signature="186:286" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="209:284" ph="{...}" />
+            <marker date="1477883476000" expanded="false" signature="217:281" ph="{...}" />
+            <marker date="1477883476000" expanded="false" signature="288:312" ph="/*...*/" />
+            <marker date="1477883476000" expanded="false" signature="377:391" ph="{...}" />
+            <marker date="1477883476000" expanded="false" signature="442:446" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/GameScene.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="256" column="48" lean-forward="false" selection-start-line="256" selection-start-column="47" selection-end-line="256" selection-end-column="48" />
+          <folding>
+            <element signature="e#418#2644#0" expanded="false" />
+            <element signature="e#1689#2018#0" expanded="false" />
+            <element signature="e#2683#4531#0" expanded="false" />
+            <element signature="e#2854#2986#0" expanded="false" />
+            <element signature="e#2869#2902#0" expanded="false" />
+            <element signature="e#2906#2941#0" expanded="false" />
+            <element signature="e#2945#2982#0" expanded="false" />
+            <element signature="e#4570#4879#0" expanded="false" />
           </folding>
         </state>
       </provider>

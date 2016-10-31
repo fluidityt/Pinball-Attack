@@ -10,7 +10,7 @@ import SpriteKit
 import UIKit
 
 
-
+/// This is a lazy thing:
 private let scene2 = gScene
 // Ball
 struct ConBall {
@@ -38,28 +38,6 @@ struct ConPhy {
 	let dist:      CGFloat        = 1, // Distance
 			flip_up:   NSTimeInterval = 0.06,
 			flip_down: NSTimeInterval = 0.08
-}
-
-
-extension SKScene {
-	var center: CGPoint {
-		get {
-			return CGPoint (x: self.frame.midX, y: self.frame.midY)
-		}
-	}
-}
-
-/* MARK: OOP nonsense */
-/// Signals that we are doing some bullshit.
-func OOP () -> Any {
-
-	return 0
-}
-
-infix operator --> {}
-
-func --> (l: Any, r: Any) {
-
 }
 
 
