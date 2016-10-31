@@ -29,15 +29,26 @@ struct Cat {
 	
 	// Battle!!
 	damage_to_give: Int,
-	damage_to_take: Int
+	damage_to_take: Int,
+	damage_left: Int
 	
+	let AP = 40
+	let DEF = 20
 	
 	// Meth:
-	func fireRocket() -> Cat {return Cat(fromOldCat: self, rockets: (self.rockets - 1))}
-	func takeDamage() -> Cat {return Cat(fromOldCat: self, lives: (self.lives - 1))}
+	func fireRocket(at target_cat: Cat) -> Cat {
+		let damtogive = (self.AP - target_cat.DEF)
+		let rock_ets = (self.rockets - 1)
+		
+		return Cat(fromOldCat: self, rockets: rock_ets, damage_to_give: damtogive)
+	}
+	func takeDamage(from that_cat: Cat) -> Cat {
+		let
+		return Cat(fromOldCat: self, lives: (self.lives - 1))
+	}
 	
 	// FP transformation:
-	init(fromOldCat oc: Cat, age: Int? = nil, name: String? = nil, rockets: Int? = nil, lives: Int? = nil, damage_to_give: Int? = nil, damage_to_take: Int? = nil) {
+	init(fromOldCat oc: Cat, age: Int? = nil, name: String? = nil, rockets: Int? = nil, lives: Int? = nil, damage_to_give: Int? = nil, damage_to_take: Int? = nil, damage_left: Int? = nil) {
 		
 		// Basics:
 		age ==  nil ? (self.age = oc.age)   : (self.age = age!)
@@ -51,6 +62,8 @@ struct Cat {
 		
 		if damage_to_take == nil { self.damage_to_give = oc.damage_to_take }
 		else { self.damage_to_take = oc.damage_to_take }
+		
+		damage_left == nil ? (self.damage_left = oc.damage_left) : (self.damage_left = damage_left!)
 	}
 	
 }
