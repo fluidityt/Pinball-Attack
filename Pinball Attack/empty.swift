@@ -66,7 +66,13 @@ func updates() {
 
 
 			if oldRocket == nil {
-				assignDefaults:do {}
+				assignDefaults:do {
+					let c = ConfRocket()
+					self.fires_remaining = c.fires_remaining
+					self.power            = c.power
+
+
+				}
 			}
 			else {
 				if newPower != nil { self.power = newPower! }
@@ -94,9 +100,6 @@ struct Player2  {
 // Immutable
 
 // Don't persist the actual node... make it and call it by name...
-
-
-
 
 
 

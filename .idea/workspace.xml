@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aed8aa68-adb4-439c-bdab-3d53a2c74689" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/empty.swift" afterPath="$PROJECT_DIR$/Pinball Attack/empty.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/Contents.swift" afterPath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/Contents.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/contents.xcplayground" afterPath="$PROJECT_DIR$/Pinball Attack/pinballplayground.playground/contents.xcplayground" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,14 +26,16 @@
       <file leaf-file-name="empty.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pinball Attack/empty.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="73" column="7" lean-forward="false" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+            <state relative-caret-position="660">
+              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
                 <element signature="e#87#173#0" expanded="true" />
                 <element signature="e#376#391#0" expanded="true" />
-                <element signature="e#1369#1382#0" expanded="true" />
-                <marker date="1477889917000" expanded="true" signature="1358:1367" ph="{...}" />
+                <element signature="e#393#1353#0" expanded="true" />
+                <element signature="e#972#1348#0" expanded="true" />
+                <element signature="e#1485#1498#0" expanded="true" />
+                <marker date="1477890715000" expanded="true" signature="1474:1483" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -253,7 +258,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34183000" />
+    <option name="totallyTimeSpent" value="35218000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -891,21 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pinball Attack/Config.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <marker date="1477883476000" expanded="false" signature="0:135" ph="//..." />
-            <marker date="1477883476000" expanded="false" signature="137:166" ph="import ..." />
-            <marker date="1477883476000" expanded="true" signature="246:372" ph="{...}" />
-            <marker date="1477883476000" expanded="true" signature="401:650" ph="{...}" />
-            <marker date="1477883476000" expanded="true" signature="677:801" ph="{...}" />
-            <marker date="1477883476000" expanded="true" signature="799:801" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -972,16 +962,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Pinball Attack/Config.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <marker date="1477883476000" expanded="false" signature="0:135" ph="//..." />
+            <marker date="1477883476000" expanded="false" signature="137:166" ph="import ..." />
+            <marker date="1477883476000" expanded="true" signature="246:372" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="401:650" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="677:801" ph="{...}" />
+            <marker date="1477883476000" expanded="true" signature="799:801" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/empty.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="73" column="7" lean-forward="false" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        <state relative-caret-position="660">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <element signature="e#87#173#0" expanded="true" />
             <element signature="e#376#391#0" expanded="true" />
-            <element signature="e#1369#1382#0" expanded="true" />
-            <marker date="1477889917000" expanded="true" signature="1358:1367" ph="{...}" />
+            <element signature="e#393#1353#0" expanded="true" />
+            <element signature="e#972#1348#0" expanded="true" />
+            <element signature="e#1485#1498#0" expanded="true" />
+            <marker date="1477890715000" expanded="true" signature="1474:1483" ph="{...}" />
           </folding>
         </state>
       </provider>
