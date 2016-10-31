@@ -31,6 +31,21 @@ func tb() {
 }
 
 func updates() {
+
+	// An SKNode:
+	let pinball = sys.pinball
+	let data    = sys.pinball.data
+
+	let rocket_force = 500
+	// RocketBoost that gets weaker
+	pinball.velocity = data.rocketBoost(
+
+	pinball.position = data.calculateDistance(pinball.velocity)
+
+
+
+
+	
 	
 }
 
