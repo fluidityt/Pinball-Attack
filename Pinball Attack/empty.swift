@@ -34,19 +34,35 @@ func updates() {
 
 	// An SKNode:
 	let pinball = sys.pinball
+	// Data struct:
 	let data    = sys.pinball.data
-
-	let rocket_force = 500
-	// RocketBoost that gets weaker
-	pinball.velocity = data.rocketBoost(
-
-	pinball.position = data.calculateDistance(pinball.velocity)
+	// Specialized-sub-struct:
+	let rocket  = sys.pinball.data.rocket
 
 
 
 
-	
-	
+
+
+	fire_results = rocket.fire( rocket.power, rocket.fires_remaining )
+
+	next_rocket_power = (fire_results.fires_remaining / fire_results.power)
+	next_rocket_fires_remaining = fire_results.fires_remaining
+
+
+	let new_rocket = Rocket( oldRocket: rocket, newPower: next_rocket_power, newFR: new_rocket_fires_remaining ) {
+
+
+	}
+
+	struct Rocket {
+
+		init(oldRocket: Rocket, newPower: Int? = nil, newFR: Int? = nil) {
+
+			if newPower != nil { self.power = newPower } else { self.power = oldRocket.power }
+			
+		}
+	}
 }
 
 // What about putting the data inside the node?

@@ -23,14 +23,14 @@
       <file leaf-file-name="empty.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pinball Attack/empty.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state relative-caret-position="678">
+              <caret line="62" column="6" lean-forward="false" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
                 <element signature="e#87#173#0" expanded="true" />
                 <element signature="e#376#391#0" expanded="true" />
-                <element signature="e#784#797#0" expanded="true" />
-                <marker date="1477887984000" expanded="true" signature="773:782" ph="{...}" />
+                <element signature="e#1215#1228#0" expanded="true" />
+                <marker date="1477889715000" expanded="true" signature="1204:1213" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -253,7 +253,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32252000" />
+    <option name="totallyTimeSpent" value="33978000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -974,14 +974,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pinball Attack/empty.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        <state relative-caret-position="678">
+          <caret line="62" column="6" lean-forward="false" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <element signature="e#87#173#0" expanded="true" />
             <element signature="e#376#391#0" expanded="true" />
-            <element signature="e#784#797#0" expanded="true" />
-            <marker date="1477887984000" expanded="true" signature="773:782" ph="{...}" />
+            <element signature="e#1215#1228#0" expanded="true" />
+            <marker date="1477889715000" expanded="true" signature="1204:1213" ph="{...}" />
           </folding>
         </state>
       </provider>
