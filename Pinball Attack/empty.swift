@@ -1,9 +1,28 @@
 import SpriteKit
 import UIKit
 
-var gNameOfNodes = ["nodes"]
+class Glober: SKNode {
+
+	var list_of_nodes: [String]
+	
+	init(listOfNodes lon: [String]){
+		
+		self.list_of_nodes = lon
+		
+		super.init()
+		
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+}
 
 func dmv(scene: SKScene) {
+	
+	let new_player = SKSpriteNode()
+	
+	scene.addChild(new_player)
 	
 }
 
@@ -23,13 +42,6 @@ struct Player2  {
 	let name: String
 	let HP: Int
 	
-	func thatTookDamage(damage: Int = 4, ) -> Player2 {
-		
-		func returnSelf(s: String = self.node){
-		}
-		
-		return self
-	}
 	
 		
 	
