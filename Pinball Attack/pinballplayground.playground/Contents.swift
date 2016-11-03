@@ -1,12 +1,10 @@
-//: Playground - noun: a place where people can play
+//: Playground - noun: a place where cats can play (with rockets).
 
 // BATTLE CATS!!
 
+// TODO: Make more enums (alive, dead, etc)
 /// Says meow... OR fires a rocket at your face:
 struct Cat {
-
-	// TODO: Make more enums (alive, dead, etc)
-	
 	
 	/* Fields: */
 
@@ -19,8 +17,7 @@ struct Cat {
 	status: String,
 
 	dmg_to_give: Int,
-	dmg_to_take: Int,
-	dmg_left: Int
+	hp: Int
 	
 	// Constants:
 	let AP = 40
@@ -28,8 +25,9 @@ struct Cat {
 	let MAXHP = 50
 	
 	
-	/* Methods (self explaining): */
+	/* Methods: */
 	
+	/// Calculates damage to give (from $0's DEF), then stores it in own field:
 	func fireRocket(at victim: Cat) -> Cat {
 		let dmg_to_give2 = (self.AP - victim.DEF)
 		let rockets2 = (self.rockets - 1)
@@ -37,39 +35,44 @@ struct Cat {
 		return Cat(fromOldCat: self, rockets: rockets2, dmg_to_give: dmg_to_give2)
 	}
 	
+	/// Decreases own HP from value stored in other cat, then updates
 	func takeDamage(from attacker: Cat) -> Cat {
-		
-		let dmg_taken = attacker.dmg_to_give
-		let dam_left = (self.dmg_left - dmg_taken)
 		
 		// Returners:
 		let dmg_left2: Int
 		let lives2: Int
 		let status2: String
-		
-		if dam_left <= 0 {
-			dmg_left2 = self.MAXHP
-			lives2 = (self.lives - 1)
-			lives2 == 0 ? (status2 = "Dead") : (status2 = "Alive")
-		}
+
+		assignmentLogic: do {
 			
-		else {
-			dmg_left2 = dam_left
-			lives2 = self.lives
-			status2 = "Alive"
+			let dmg_taken = attacker.dmg_to_give
+			let dam_left = (self.hp - dmg_taken)
+			
+			if dam_left <= 0 {
+				dmg_left2 = self.MAXHP
+				lives2 = (self.lives - 1)
+				lives2 == 0 ? (status2 = "Dead") : (status2 = "Alive")
+			}
+				
+			else {
+				dmg_left2 = dam_left
+				lives2 = self.lives
+				status2 = "Alive"
+			}
 		}
 		
 		return Cat(fromOldCat: self, lives: lives2, dmg_left: dmg_left2, status: status2)
 	}
 	
 	func resetDamages() -> Cat {
-		return Cat(fromOldCat: self, dmg_to_give: 0, dmg_to_take: 0)
+		return Cat(fromOldCat: self, dmg_to_give: 0, hp: 0)
 	}
+	
 	
 	/* Inits: */
 	
 	/// Default init:
-	init(_name: String) { age = 5; name = _name; rockets = 5; lives = 9; dmg_to_give = 0; dmg_to_take = 0; dmg_left = self.MAXHP; status = "Alive"}
+	init(_name: String) { age = 5; name = _name; rockets = 5; lives = 9; dmg_to_give = 0; hp = self.MAXHP; status = "Alive"}
 	
 	/// FP transformation:
 	init(fromOldCat oc: Cat,
@@ -79,31 +82,27 @@ struct Cat {
 	                lives: Int? = nil,
 	                
 	                dmg_to_give: Int? = nil,
-	                dmg_to_take: Int? = nil,
-	                dmg_left: Int? = nil,
+	                hp: Int? = nil,
 	                status: String? = nil) {
 	
 		// Basics:
-		age ==  nil ? 		(self.age = oc.age)   			: (self.age = age!)
-		name == nil ? 		(self.name = oc.name) 			: (self.name = name!)
+		age ==  nil 	 ? 	(self.age = oc.age)   			: (self.age = age!)
+		name == nil 	 ? 	(self.name = oc.name) 			: (self.name = name!)
 		rockets == nil ?	(self.rockets = oc.rockets) : (self.rockets = rockets!)
-		lives == nil ? 		(self.lives = oc.lives) 		: (self.lives = lives!)
-		status == nil ? (self.status = oc.status) : (self.status = status!)
+		lives == nil 	 ? 	(self.lives = oc.lives) 		: (self.lives = lives!)
+		status == nil  ?	(self.status = oc.status) 	: (self.status = status!)
 		
 		// Battle:
+		hp == nil 	 	 ?  (self.hp = oc.hp) 					:(self.hp = hp!)
 		dmg_to_give == nil ? (self.dmg_to_give = oc.dmg_to_give):(self.dmg_to_give = dmg_to_give!)
-		dmg_to_take == nil ? (self.dmg_to_take = oc.dmg_to_take):(self.dmg_to_take = oc.dmg_to_take)
-		dmg_left == nil 	 ? (self.dmg_left = oc.dmg_left) 			:(self.dmg_left = dmg_left!)
 	}
-	
-}
+} //</cat>
 
-// List of Cats:
+
+/* List of Cats: */
 
 /// Holds our cats:
 struct CatList {
-	
-	private static var list = CatList(defaults: 0)
 	
 	struct Names { static let fluffy="Fluffy", kitty="Kitty", boots="Boots"}
 	
@@ -134,8 +133,11 @@ struct CatList {
 	}
 }
 
-/// Reference:
-var gCatList = CatList.list
+
+/* GLOBAL: */
+
+/// Instance to pass around:
+var gCatList = CatList(defaults: 1)
 
 // Combat:
 
