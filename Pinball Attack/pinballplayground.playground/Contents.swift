@@ -177,7 +177,7 @@ func handleResults(list: CatList = gCatList,
 gCatList = handleResults(results: doCombat(gCatList.boots, .fireRocket, at: gCatList.fluffy))
 
 
-print(gCatList.boots.damage_left)
+print(gCatList.fluffy.damage_left)
 
 
 
