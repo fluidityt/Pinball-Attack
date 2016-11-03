@@ -126,10 +126,10 @@ struct CatList {
 	init(ol: CatList, fluffy: Cat? = nil, kitty: Cat? = nil, boots: Cat? = nil, uk_cats: [Cat]? = nil) {
 		// Inits:
 	
-		fluffy == nil ?  (self.fluffy = ol.fluffy ) : (self.fluffy = fluffy!)
-		kitty == nil ?   (self.kitty = ol.kitty ) : ( self.kitty = kitty! )
-		boots == nil ? 	 (self.boots = ol.boots ) : (self.boots = boots! )
-		uk_cats == nil ? (self.uk_cats = ol.uk_cats) : (self.uk_cats = uk_cats! )
+		fluffy == nil  ? (self.fluffy = ol.fluffy)   : (self.fluffy = fluffy!)
+		kitty == nil   ? (self.kitty = ol.kitty)  	 : (self.kitty = kitty!)
+		boots == nil   ? (self.boots = ol.boots)  	 : (self.boots = boots!)
+		uk_cats == nil ? (self.uk_cats = ol.uk_cats) : (self.uk_cats = uk_cats!)
 	}
 }
 
@@ -139,60 +139,83 @@ struct CatList {
 /// Instance to pass around:
 var gCatList = CatList(defaults: 1)
 
-// Combat:
 
-enum Attacks { case fireRocket
-	func becomeFunc(atk atk: Cat, vic: Cat) -> ()->(Cat) {
+/* Combat funk */
+
+/// 1v1 Combatants:
+typealias Combatants = (attacker: Cat, victim: Cat)
+
+/// Makes doCombat (defined next) more Englishy / fun, by pairing an enum to a 1v1 Cat.method()
+enum Attacks {
+	
+	case fires1Rocket
+	
+	func becomeFunc(combatants: Combatants) -> ()->(Cat) {
+		let attacker = combatants.attacker
+		let victim  = combatants.victim
 		switch self {
-		case fireRocket:
-			return {atk.fireRocket(at: vic)}
+			case fires1Rocket:
+				return { attacker.fireRocket( at: victim) }
 		}
 	}
 }
 
-func doCombat(attacker: Cat, _ y: Attacks, at victim: Cat) -> (attacker: Cat, victim: Cat) {
-	let attacked = y.becomeFunc(atk: attacker, vic: victim)
+
+/// Returns two new cats after battling.. Use them to update your CatList:
+func doCombat(attacker: Cat, _ const: Attacks, at victim: Cat) -> Combatants {
+	
+	// New funcs that make a new Cat each:
+	let attacked = const.becomeFunc((attacker, victim))
 	let victimized = { victim.takeDamage(from: attacked()) }
 	
-	return (attacked(), victimized())
+	return (attacker: attacked(), victim: victimized())
 }
 
+/// Mutates our gCatList automagically with the battle results:
 func handleResults(list: CatList = gCatList,
-                   results: (attacker: Cat, victim: Cat))
+                   cats_after_btl: Combatants)
  -> CatList {
 	
+
 	func matchName(combatant: (name: String, is_attacker: Bool),
 	               list2UpdateFrom: CatList)
 		-> CatList {
 			
+			// Returner:
 			let new_cat: Cat
-			combatant.is_attacker ? (new_cat = results.attacker) : (new_cat = results.victim)
 			
+			// Logic1:
+			combatant.is_attacker ?
+				(new_cat = cats_after_btl.attacker) : (new_cat = cats_after_btl.victim)
 			
+			// Logic2:
 			typealias n=CatList.Names
-			
 			switch combatant.name {
-			case n.boots: return CatList(ol: list2UpdateFrom, boots: new_cat)
-			case n.fluffy: return CatList(ol: list2UpdateFrom, fluffy: new_cat)
-			case n.kitty: return CatList(ol: list2UpdateFrom,  kitty: new_cat)
-			default: print("error cant find cat"); let error: CatList? = nil; return error!
+				case n.boots:  return CatList (ol: list2UpdateFrom, boots: new_cat)
+				case n.fluffy: return CatList (ol: list2UpdateFrom, fluffy: new_cat)
+				case n.kitty:  return CatList (ol: list2UpdateFrom, kitty: new_cat)
+				
+				// Induce crash:
+				default: print("error cant find cat"); let error: CatList? = nil; return error!
 			}
-			
-		
 	}
 	
 	//	matchName(results.attacker.name, is_attacker: true, list2: list).boots.damage_to_give
-	let attacker2 = (results.attacker.name, true)
-	let victim2 = (results.victim.name, false)
+	let attacker2 = (cats_after_btl.attacker.name, true)
+	let victim2 = (cats_after_btl.victim.name, false)
 	
 	return matchName(victim2, list2UpdateFrom: (matchName(attacker2, list2UpdateFrom: list )))
 }
 
 // MARK: TESTING 2:
-
-gCatList = handleResults(results: doCombat(gCatList.boots, .fireRocket, at: gCatList.fluffy))
-
-print(gCatList.fluffy.dmg_left)
+aBattleTest: do {
+	let test_attacker = gCatList.boots
+	let test_victim = gCatList.fluffy
+	
+	gCatList = handleResults(cats_after_btl: doCombat(test_attacker, .fires1Rocket, at: test_victim))
+	
+	print(test_victim.hp)
+}
 
 
 
