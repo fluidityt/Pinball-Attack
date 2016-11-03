@@ -2,87 +2,99 @@
 
 // BATTLE CATS!!
 
-var global: Any
-private let globalName = "Flufferton"
-
-// Better equals for FP:
-infix operator ->>{}
-func ->><T>(inout l: T, r: T){	l = r }
-
-/// Says meow:
+/// Says meow... OR fires a rocket at your face:
 struct Cat {
 
-	// Field:
+	// TODO: Make more enums (alive, dead, etc)
+	
+	
+	/* Fields: */
+
+	// Transformable:
 	let
 	age: Int,
 	name: String,
-	rockets: Int, // Our kitty is srsbznz... been wraned..
+	rockets: Int, // Our kitty is srsbznz... bin' warn3d..
 	lives: Int,
-	
-	// Battle!!
+	status: String,
 
-	damage_to_give: Int,
-	damage_to_take: Int,
-	damage_left: Int,
-	status: String
+	dmg_to_give: Int,
+	dmg_to_take: Int,
+	dmg_left: Int
 	
+	// Constants:
 	let AP = 40
 	let DEF = 20
 	let MAXHP = 50
 	
-	// Meth:
-	func fireRocket(at target_cat: Cat) -> Cat {
-		let damtogive = (self.AP - target_cat.DEF)
-		let rock_ets = (self.rockets - 1)
+	
+	/* Methods (self explaining): */
+	
+	func fireRocket(at victim: Cat) -> Cat {
+		let dmg_to_give2 = (self.AP - victim.DEF)
+		let rockets2 = (self.rockets - 1)
 		
-		return Cat(fromOldCat: self, rockets: rock_ets, damage_to_give: damtogive)
+		return Cat(fromOldCat: self, rockets: rockets2, dmg_to_give: dmg_to_give2)
 	}
 	
-	func takeDamage(from that_cat: Cat) -> Cat {
-		let damtaken = that_cat.damage_to_give
-		let damleft = (self.damage_left - damtaken)
+	func takeDamage(from attacker: Cat) -> Cat {
 		
-		// returners:
-		let damleft2: Int
-		let li_ves: Int
-		let sta_tus: String
+		let dmg_taken = attacker.dmg_to_give
+		let dam_left = (self.dmg_left - dmg_taken)
 		
-		if damleft <= 0 {
-			damleft2 = self.MAXHP
-			li_ves = (self.lives - 1)
-			li_ves == 0 ? (sta_tus = "Dead") : (sta_tus = "Alive")
+		// Returners:
+		let dmg_left2: Int
+		let lives2: Int
+		let status2: String
+		
+		if dam_left <= 0 {
+			dmg_left2 = self.MAXHP
+			lives2 = (self.lives - 1)
+			lives2 == 0 ? (status2 = "Dead") : (status2 = "Alive")
 		}
 			
 		else {
-			damleft2 = damleft
-			li_ves = self.lives
-			sta_tus = "Alive"
+			dmg_left2 = dam_left
+			lives2 = self.lives
+			status2 = "Alive"
 		}
 		
-		return Cat(fromOldCat: self, lives: li_ves, damage_left: damleft2, status: sta_tus)
+		return Cat(fromOldCat: self, lives: lives2, dmg_left: dmg_left2, status: status2)
 	}
 	
-	// FP transformation:
-	init(fromOldCat oc: Cat, age: Int? = nil, name: String? = nil, rockets: Int? = nil, lives: Int? = nil, damage_to_give: Int? = nil, damage_to_take: Int? = nil, damage_left: Int? = nil, status: String? = nil) {
-		
+	func resetDamages() -> Cat {
+		return Cat(fromOldCat: self, dmg_to_give: 0, dmg_to_take: 0)
+	}
+	
+	/* Inits: */
+	
+	/// Default init:
+	init(_name: String) { age = 5; name = _name; rockets = 5; lives = 9; dmg_to_give = 0; dmg_to_take = 0; dmg_left = self.MAXHP; status = "Alive"}
+	
+	/// FP transformation:
+	init(fromOldCat oc: Cat,
+	                age: Int? = nil,
+	                name: String? = nil,
+	                rockets: Int? = nil,
+	                lives: Int? = nil,
+	                
+	                dmg_to_give: Int? = nil,
+	                dmg_to_take: Int? = nil,
+	                dmg_left: Int? = nil,
+	                status: String? = nil) {
+	
 		// Basics:
-		age ==  nil ? 		(self.age = oc.age)   : (self.age = age!)
-		name == nil ? 		(self.name = oc.name) : (self.name = name!)
+		age ==  nil ? 		(self.age = oc.age)   			: (self.age = age!)
+		name == nil ? 		(self.name = oc.name) 			: (self.name = name!)
 		rockets == nil ?	(self.rockets = oc.rockets) : (self.rockets = rockets!)
-		lives == nil ? 		(self.lives = oc.lives) : (self.lives = lives!)
+		lives == nil ? 		(self.lives = oc.lives) 		: (self.lives = lives!)
+		status == nil ? (self.status = oc.status) : (self.status = status!)
 		
 		// Battle:
-		if damage_to_give == nil { self.damage_to_give = oc.damage_to_give}
-		 else { self.damage_to_give = damage_to_give! }
-		
-		if damage_to_take == nil { self.damage_to_take = oc.damage_to_take }
-		 else { self.damage_to_take = oc.damage_to_take }
-		
-		damage_left == nil ? (self.damage_left = oc.damage_left) : (self.damage_left = damage_left!)
-		status == nil ? (self.status = oc.status) : (self.status = status!)
+		dmg_to_give == nil ? (self.dmg_to_give = oc.dmg_to_give):(self.dmg_to_give = dmg_to_give!)
+		dmg_to_take == nil ? (self.dmg_to_take = oc.dmg_to_take):(self.dmg_to_take = oc.dmg_to_take)
+		dmg_left == nil 	 ? (self.dmg_left = oc.dmg_left) 			:(self.dmg_left = dmg_left!)
 	}
-	
-	init(_name: String) { age = 5; name = _name; rockets = 5; lives = 9; damage_to_give = 0; damage_to_take = 0; damage_left = self.MAXHP; status = "Alive"}
 	
 }
 
@@ -174,10 +186,11 @@ func handleResults(list: CatList = gCatList,
 	return matchName(victim2, list2UpdateFrom: (matchName(attacker2, list2UpdateFrom: list )))
 }
 
+// MARK: TESTING 2:
+
 gCatList = handleResults(results: doCombat(gCatList.boots, .fireRocket, at: gCatList.fluffy))
 
-
-print(gCatList.fluffy.damage_left)
+print(gCatList.fluffy.dmg_left)
 
 
 
