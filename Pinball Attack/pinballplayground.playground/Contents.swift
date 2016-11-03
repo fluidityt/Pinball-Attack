@@ -168,11 +168,10 @@ func handleResults(list: CatList = gCatList,
 	}
 	
 	//	matchName(results.attacker.name, is_attacker: true, list2: list).boots.damage_to_give
-	let attacker2 = results.attacker.name
-	let victim2 = results.victim.name
+	let attacker2 = (results.attacker.name, true)
+	let victim2 = (results.victim.name, false)
 	
-	return matchName(attacker2, is_attacker: true,
-	                 list2UpdateFrom: matchName(victim2, is_attacker: false, list2UpdateFrom: list ))
+	return matchName(victim2, list2UpdateFrom: (matchName(attacker2, list2UpdateFrom: list )))
 }
 
 gCatList = handleResults(results: doCombat(gCatList.boots, .fireRocket, at: gCatList.fluffy))
