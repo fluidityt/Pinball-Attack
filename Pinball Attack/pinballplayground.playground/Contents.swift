@@ -3,12 +3,7 @@
 // BATTLE CATS!!
 
 var global: Any
-var typeGlobe: Any
 private let globalName = "Flufferton"
-
-// Requires a globe:
-prefix operator ***{}
-prefix func ***<T>(set: T) { typeGlobe = set }
 
 // Better equals for FP:
 infix operator ->>{}
@@ -117,10 +112,9 @@ struct CatList {
 		uk_cats = []
 	}
 	
-	init(fluffy: Cat? = nil, kitty: Cat? = nil, boots: Cat? = nil, uk_cats: [Cat]? = nil) {
+	init(ol: CatList, fluffy: Cat? = nil, kitty: Cat? = nil, boots: Cat? = nil, uk_cats: [Cat]? = nil) {
 		// Inits:
-		let ol = CatList.list
-		
+	
 		fluffy == nil ?  (self.fluffy = ol.fluffy ) : (self.fluffy = fluffy!)
 		kitty == nil ?   (self.kitty = ol.kitty ) : ( self.kitty = kitty! )
 		boots == nil ? 	 (self.boots = ol.boots ) : (self.boots = boots! )
@@ -129,7 +123,7 @@ struct CatList {
 }
 
 /// Reference:
-var gCatList = CatList()
+var gCatList = CatList.list
 
 // Combat:
 
@@ -149,27 +143,24 @@ func doCombat(attacker: Cat, _ y: Attacks, at victim: Cat) -> (attacker: Cat, vi
 	return (attacked(), victimized())
 }
 
-// Testing
-
-**gCatList.
-
-let results = doCombat(.boots, .fireRocket, at: fluffy)
-
-func handleResults(list: CatList = gCatList, attacker: Cat, victim: Cat) -> CatList {
-	let ret_atk: Cat
-	let ret_vic: Cat
+func handleResults(list: CatList = gCatList, results: (attacker: Cat, victim: Cat)) -> CatList {
 	
-	func matchName(name: String) -> Cat {
+	func matchName(name: String, list2: CatList) -> CatList {
 		
-		_=CatList.Names
-		.
+		typealias n=CatList.Names
+		
 		switch name {
-			case .boots: return list.fluffy
-			case
+		case n.boots: return CatList(ol: list2, boots: list.boots)
+		case n.fluffy: return CatList(ol: list2, fluffy: list.fluffy)
+		case n.kitty: return CatList(ol: list2,  kitty: list.kitty)
+		default: print("error cant find cat"); let error: CatList? = nil; return error!
 		}
 	}
+	
+	return
 }
-gCatList = CatList(boots: results.attacker, fluffy: results.victim)
+
+//gCatList = CatList(boots: results.attacker, fluffy: results.victim)
 
 print(gCatList.fluffy.damage_left)
 
