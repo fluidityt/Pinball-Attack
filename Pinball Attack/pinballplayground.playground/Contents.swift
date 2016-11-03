@@ -30,7 +30,7 @@ struct Cat {
 	lives: Int,
 	
 	// Battle!!
-	
+
 	damage_to_give: Int,
 	damage_to_take: Int,
 	damage_left: Int,
@@ -47,6 +47,7 @@ struct Cat {
 		
 		return Cat(fromOldCat: self, rockets: rock_ets, damage_to_give: damtogive)
 	}
+	
 	func takeDamage(from that_cat: Cat) -> Cat {
 		let damtaken = that_cat.damage_to_give
 		let damleft = (self.damage_left - damtaken)
@@ -75,38 +76,43 @@ struct Cat {
 	init(fromOldCat oc: Cat, age: Int? = nil, name: String? = nil, rockets: Int? = nil, lives: Int? = nil, damage_to_give: Int? = nil, damage_to_take: Int? = nil, damage_left: Int? = nil, status: String? = nil) {
 		
 		// Basics:
-		age ==  nil ? (self.age = oc.age)   : (self.age = age!)
-		name == nil ? (self.name = oc.name) : (self.name = name!)
-		rockets == nil ? (self.rockets = oc.rockets) : (self.rockets = rockets!)
-		lives == nil ? (self.lives = oc.lives) : (self.lives = lives!)
+		age ==  nil ? 		(self.age = oc.age)   : (self.age = age!)
+		name == nil ? 		(self.name = oc.name) : (self.name = name!)
+		rockets == nil ?	(self.rockets = oc.rockets) : (self.rockets = rockets!)
+		lives == nil ? 		(self.lives = oc.lives) : (self.lives = lives!)
 		
 		// Battle:
 		if damage_to_give == nil { self.damage_to_give = oc.damage_to_give}
 		 else { self.damage_to_give = damage_to_give! }
-		if damage_to_take == nil { self.damage_to_give = oc.damage_to_take }
+		
+		if damage_to_take == nil { self.damage_to_take = oc.damage_to_take }
 		 else { self.damage_to_take = oc.damage_to_take }
+		
 		damage_left == nil ? (self.damage_left = oc.damage_left) : (self.damage_left = damage_left!)
 		status == nil ? (self.status = oc.status) : (self.status = status!)
 	}
+	
+	init() { age = 5; name = ""; rockets = 5; lives = 9; damage_to_give = 0; damage_to_take = 0; damage_left = self.MAXHP; status = "Alive"}
 	
 }
 
 // Testing:
 
-print(kitty)
-print(fluffy)
+var fluffy = Cat()
 
 var kitty = Cat(fromOldCat: fluffy, age: 34, name: "Kitty")
 
-var fluffy = Cat()
 var boots = Cat(fromOldCat: kitty, name: "Boots")
 
-fluffy.fireRocket()
+func doCombat(x: Cat, _ y: (), at z: Cat) {
 
-boots ->> boots.fireRocket()
 
-boots ->> boots.takeDamage()
+}
 
-print(boots)
+boots ->> boots.fireRocket(at: fluffy)
+
+fluffy ->> fluffy.takeDamage(from: boots)
+
+print(fluffy.damage_left)
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1FC9CE11DC840A400213E05 /* rocket test.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FC9CE01DC840A400213E05 /* rocket test.sks */; };
+		C1FC9CE31DC84ACB00213E05 /* MyActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FC9CE21DC84ACB00213E05 /* MyActions.sks */; };
 		C1FD9EF31DC2E97C00D133B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD9EF21DC2E97C00D133B0 /* AppDelegate.swift */; };
 		C1FD9EF51DC2E97C00D133B0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FD9EF41DC2E97C00D133B0 /* GameScene.sks */; };
 		C1FD9EF71DC2E97C00D133B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD9EF61DC2E97C00D133B0 /* GameScene.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		C188222C1DC5C21D002E41AF /* pinballplayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = pinballplayground.playground; path = "/Users/dudeguy/Dropbox/Shared Desktop/Pinball Attack/Pinball Attack/pinballplayground.playground"; sourceTree = "<absolute>"; };
+		C1FC9CE01DC840A400213E05 /* rocket test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "rocket test.sks"; sourceTree = "<group>"; };
+		C1FC9CE21DC84ACB00213E05 /* MyActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MyActions.sks; path = "Pinball Attack/Assets.xcassets/MyActions.sks"; sourceTree = "<group>"; };
 		C1FD9EEF1DC2E97C00D133B0 /* Pinball Attack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinball Attack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FD9EF21DC2E97C00D133B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1FD9EF41DC2E97C00D133B0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 		C1FD9EE61DC2E97C00D133B0 = {
 			isa = PBXGroup;
 			children = (
+				C1FC9CE21DC84ACB00213E05 /* MyActions.sks */,
 				C1FD9EF11DC2E97C00D133B0 /* Pinball Attack */,
 				C1FD9EF01DC2E97C00D133B0 /* Products */,
 			);
@@ -67,6 +72,7 @@
 			children = (
 				C1FD9EF21DC2E97C00D133B0 /* AppDelegate.swift */,
 				C1FD9EF41DC2E97C00D133B0 /* GameScene.sks */,
+				C1FC9CE01DC840A400213E05 /* rocket test.sks */,
 				C1FD9F081DC2E99400D133B0 /* empty.swift */,
 				C1FD9F0A1DC2E9A900D133B0 /* Config.swift */,
 				C1FF1A461DC6ED9500296EF7 /* Global.swift */,
@@ -140,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1FD9EF51DC2E97C00D133B0 /* GameScene.sks in Resources */,
+				C1FC9CE31DC84ACB00213E05 /* MyActions.sks in Resources */,
 				C1FD9F011DC2E97C00D133B0 /* LaunchScreen.storyboard in Resources */,
+				C1FC9CE11DC840A400213E05 /* rocket test.sks in Resources */,
 				C1FD9EFE1DC2E97C00D133B0 /* Assets.xcassets in Resources */,
 				C1FD9EFC1DC2E97C00D133B0 /* Main.storyboard in Resources */,
 			);
