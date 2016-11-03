@@ -98,21 +98,52 @@ struct Cat {
 
 // Testing:
 
-var fluffy = Cat()
 
-var kitty = Cat(fromOldCat: fluffy, age: 34, name: "Kitty")
+struct CatList {
+	
+	// Known cats:
+	var fluffy: Cat
+	var kitty:  Cat
+	var boots:  Cat
+	
+	// Unknown cats:
+	var uk_cats: [Cat]
 
-var boots = Cat(fromOldCat: kitty, name: "Boots")
+	// Default:
+	init() {
+		fluffy = Cat()
+		kitty = Cat(fromOldCat: fluffy, age: 34, name: "Kitty")
+		boots = Cat(fromOldCat: kitty, name: "Boots")
+	}
 
-func doCombat(x: Cat, _ y: (), at z: Cat) {
-
-
+	
 }
 
-boots ->> boots.fireRocket(at: fluffy)
+enum Attacks { case fireRocket
+	func becomeFunc(atk: Cat, vic: Cat) -> ()->(Cat) {
+		switch self {
+		case fireRocket:
+			return {atk.fireRocket(at: vic)}
+		}
+	}
+}
 
-fluffy ->> fluffy.takeDamage(from: boots)
+func doCombat(inout attacker: Cat, _ y: Attacks, inout at victim: Cat) {
+	
+	let attack = y.becomeFunc(attacker, vic: victim)
+	let defend = { victim.takeDamage(from: attacker) }
+	
+	// Combat
+	attacker ->> attack()
+	victim ->> defend()
+	
+	print(victim.damage_left)
+}
 
-print(fluffy.damage_left)
+
+doCombat(&boots, .fireRocket, at: &fluffy)
+
+
+
 
 
