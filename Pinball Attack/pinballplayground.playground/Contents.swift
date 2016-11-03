@@ -143,26 +143,38 @@ func doCombat(attacker: Cat, _ y: Attacks, at victim: Cat) -> (attacker: Cat, vi
 	return (attacked(), victimized())
 }
 
-func handleResults(list: CatList = gCatList, results: (attacker: Cat, victim: Cat)) -> CatList {
+func handleResults(list: CatList = gCatList,
+                   results: (attacker: Cat, victim: Cat))
+ -> CatList {
 	
-	func matchName(name: String, list2: CatList) -> CatList {
+	func matchName(name: String,
+	               is_attacker: Bool,
+	               results2: (attacker: Cat, victim: Cat) = results,
+	               list2: CatList)
+		-> CatList {
+		
+		let new_cat: Cat
+		is_attacker ? (new_cat = results2.attacker) : (new_cat = results2.victim)
+		
 		
 		typealias n=CatList.Names
 		
 		switch name {
-		case n.boots: return CatList(ol: list2, boots: list.boots)
-		case n.fluffy: return CatList(ol: list2, fluffy: list.fluffy)
-		case n.kitty: return CatList(ol: list2,  kitty: list.kitty)
+		case n.boots: return CatList(ol: list2, boots: new_cat)
+		case n.fluffy: return CatList(ol: list2, fluffy: new_cat)
+		case n.kitty: return CatList(ol: list2,  kitty: new_cat)
 		default: print("error cant find cat"); let error: CatList? = nil; return error!
 		}
 	}
 	
-	return
+	return matchName(results.attacker.name, is_attacker: true,
+	                 		list2: matchName(results.victim.name, is_attacker: false, list2: list ))
 }
 
-//gCatList = CatList(boots: results.attacker, fluffy: results.victim)
+//gCatList = handleResults(results: doCombat(gCatList.boots, .fireRocket, at: gCatList.fluffy))
 
-print(gCatList.fluffy.damage_left)
+
+print(gCatList.boots.damage_left)
 
 
 
