@@ -96,28 +96,43 @@ struct Cat {
 	
 }
 
-// Testing:
+// List of Cats:
 
-
+/// Holds our cats:
 struct CatList {
 	
-	// Known cats:
-	var fluffy: Cat
-	var kitty:  Cat
-	var boots:  Cat
+	private static var list = CatList(defaults: 0)
 	
-	// Unknown cats:
-	var uk_cats: [Cat]
+	// Known cats:
+	let fluffy: Cat
+	let kitty:  Cat
+	let boots:  Cat
+	
+	// Unknown cats (random battles):
+	let uk_cats: [Cat]
 
-	// Default:
-	init() {
+	// Default: (protected)
+	private init(defaults: Int) {
 		fluffy = Cat()
 		kitty = Cat(fromOldCat: fluffy, age: 34, name: "Kitty")
 		boots = Cat(fromOldCat: kitty, name: "Boots")
+		
+		uk_cats = []
 	}
-
 	
+	init(oldList ol1: CatList = CatList.list, fluffy: Cat? = nil, kitty: Cat? = nil, boots: Cat? = nil, uk_cats: [Cat]? = nil) { let ol = CatList.list
+		// Inits:
+		
+		fluffy == nil ?  (self.fluffy = ol.fluffy ) : (self.fluffy = fluffy!)
+		kitty == nil ?   (self.kitty = ol.kitty ) : ( self.kitty = kitty! )
+		boots == nil ? 	 (self.boots = ol.boots ) : (self.boots = boots! )
+		uk_cats == nil ? (self.uk_cats = ol.uk_cats) : (self.uk_cats = uk_cats! )
+	}
 }
+
+var clist = CatList()
+
+// Combat:
 
 enum Attacks { case fireRocket
 	func becomeFunc(atk: Cat, vic: Cat) -> ()->(Cat) {
@@ -128,20 +143,26 @@ enum Attacks { case fireRocket
 	}
 }
 
-func doCombat(inout attacker: Cat, _ y: Attacks, inout at victim: Cat) {
+func doCombat(attacker: Cat, _ y: Attacks, at victim: Cat) -> (attacker: Cat, victim: Cat) {
 	
 	let attack = y.becomeFunc(attacker, vic: victim)
 	let defend = { victim.takeDamage(from: attacker) }
 	
 	// Combat
-	attacker ->> attack()
-	victim ->> defend()
+	//attacker ->> attack()
+	//victim ->> defend()
 	
 	print(victim.damage_left)
+	
+	return (attack(), defend())
 }
 
+	// Testing
+let boots = clist.boots
+let fluffy = clist.fluffy
 
-doCombat(&boots, .fireRocket, at: &fluffy)
+let results = doCombat(boots, .fireRocket, at: fluffy)
+clist = CatList(boots: results.attacker)
 
 
 
