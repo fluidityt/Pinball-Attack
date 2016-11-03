@@ -147,31 +147,35 @@ func handleResults(list: CatList = gCatList,
                    results: (attacker: Cat, victim: Cat))
  -> CatList {
 	
-	func matchName(name: String,
-	               is_attacker: Bool,
-	               results2: (attacker: Cat, victim: Cat) = results,
-	               list2: CatList)
+	func matchName(combatant: (name: String, is_attacker: Bool),
+	               list2UpdateFrom: CatList)
 		-> CatList {
+			
+			let new_cat: Cat
+			combatant.is_attacker ? (new_cat = results.attacker) : (new_cat = results.victim)
+			
+			
+			typealias n=CatList.Names
+			
+			switch combatant.name {
+			case n.boots: return CatList(ol: list2UpdateFrom, boots: new_cat)
+			case n.fluffy: return CatList(ol: list2UpdateFrom, fluffy: new_cat)
+			case n.kitty: return CatList(ol: list2UpdateFrom,  kitty: new_cat)
+			default: print("error cant find cat"); let error: CatList? = nil; return error!
+			}
+			
 		
-		let new_cat: Cat
-		is_attacker ? (new_cat = results2.attacker) : (new_cat = results2.victim)
-		
-		
-		typealias n=CatList.Names
-		
-		switch name {
-		case n.boots: return CatList(ol: list2, boots: new_cat)
-		case n.fluffy: return CatList(ol: list2, fluffy: new_cat)
-		case n.kitty: return CatList(ol: list2,  kitty: new_cat)
-		default: print("error cant find cat"); let error: CatList? = nil; return error!
-		}
 	}
 	
-	return matchName(results.attacker.name, is_attacker: true,
-	                 		list2: matchName(results.victim.name, is_attacker: false, list2: list ))
+	//	matchName(results.attacker.name, is_attacker: true, list2: list).boots.damage_to_give
+	let attacker2 = results.attacker.name
+	let victim2 = results.victim.name
+	
+	return matchName(attacker2, is_attacker: true,
+	                 list2UpdateFrom: matchName(victim2, is_attacker: false, list2UpdateFrom: list ))
 }
 
-//gCatList = handleResults(results: doCombat(gCatList.boots, .fireRocket, at: gCatList.fluffy))
+gCatList = handleResults(results: doCombat(gCatList.boots, .fireRocket, at: gCatList.fluffy))
 
 
 print(gCatList.boots.damage_left)
