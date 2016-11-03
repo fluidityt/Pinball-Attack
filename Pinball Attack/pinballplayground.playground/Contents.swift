@@ -3,21 +3,16 @@
 // BATTLE CATS!!
 
 var global: Any
-
+var typeGlobe: Any
 private let globalName = "Flufferton"
-let fps: Any = ()
-typealias FPS = Any
 
-prefix operator <*{}
-prefix func <*<T>(inout l: T) {  }
+// Requires a globe:
+prefix operator ***{}
+prefix func ***<T>(set: T) { typeGlobe = set }
 
-postfix operator *>{}
-postfix func *><T>(r: T) -> T {	return r }
-
+// Better equals for FP:
 infix operator ->>{}
-func ->><T>(inout l: T, r: T){
-	l = r
-}
+func ->><T>(inout l: T, r: T){	l = r }
 
 /// Says meow:
 struct Cat {
@@ -134,7 +129,7 @@ struct CatList {
 }
 
 /// Reference:
-var clist = CatList()
+var gCatList = CatList()
 
 // Combat:
 
@@ -154,24 +149,29 @@ func doCombat(attacker: Cat, _ y: Attacks, at victim: Cat) -> (attacker: Cat, vi
 	return (attacked(), victimized())
 }
 
-	// Testing
+// Testing
 
-let boots = clist.boots
-let fluffy = clist.fluffy
+**gCatList.
 
-let results = doCombat(boots, .fireRocket, at: fluffy)
+let results = doCombat(.boots, .fireRocket, at: fluffy)
 
-func handleResults(attacker: Cat, victim: Cat) -> CatList {
+func handleResults(list: CatList = gCatList, attacker: Cat, victim: Cat) -> CatList {
 	let ret_atk: Cat
 	let ret_vic: Cat
 	
 	func matchName(name: String) -> Cat {
+		
+		_=CatList.Names
+		.
 		switch name {
-			case:
+			case .boots: return list.fluffy
+			case
+		}
+	}
 }
-clist = CatList(boots: results.attacker, fluffy: results.victim)
+gCatList = CatList(boots: results.attacker, fluffy: results.victim)
 
-print(clist.fluffy.damage_left)
+print(gCatList.fluffy.damage_left)
 
 
 
