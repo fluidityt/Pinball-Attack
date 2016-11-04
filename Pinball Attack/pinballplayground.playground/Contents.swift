@@ -23,7 +23,11 @@ Conventions:
 			(Non-transform): 	FIELDNAME
 		- Global Constant:	gCONSTANT
 	
-Methods:
+Methods / Funcs:
+	- Are non-mutating, pass in a value, and always return a value.
+		However, named closures do not necessarily return a value 
+		or pass in data (they are convenience).
+
 	- Pass 'self' implicitly (to reduce verbosity, etc.)
 		I still consider this pure, though not referentailly transparent
 		IMO, since explicitly passing	in an instance of Cat type 
@@ -34,6 +38,11 @@ Methods:
 	- Sub-functions may not always pass outer-pram for
 		verbose reasons ( see matchName() )
 
+	- Data used in the 'return' call or logic expressions
+		are usually declared and commented as "Returners" wih no value;
+		the subsequent `logicLabel do:' will assign the value.
+
+	
 Goal:
 	- To make a single, mutable var 'cat list';
 		this list contains immutable Cat instanaces.
@@ -63,71 +72,75 @@ TODO:
 	- Implement random battles (unnamed cats)
 	- Test performance
 	- Make unit tests
-	- Clean up documentation
-
+	- Convert '///' into '/** */' ... Add #Usage callouts
+	- Pull some code in from the far-right side
+	- Remove some of the code from funcs in Battle;
+		they are too simple or only used once.
+	- Figure out a better way to reset a Cat's dmgToGive..
 */
 
 
-/// Says meow... OR fires a rocket at your face:
+/** Says meow... OR fires a rocket at your face: */
 struct Cat {
 	
-	/* Enum: */
-	
-	/* Fields: */
+/* Fields: */
 
 	// Transformable:
 	let
-	age: Int,
-	name: String,
-	rockets: Int, // Our kitty is srsbznz... bin' warn3d..
-	lives: Int,
-	status: String,
+		age: Int,
+		name: String,
+		rockets: Int, // Our kitty is srsbznz... bin' warn3d..
+		lives: Int,
+		status: String,
 
-	dmg_to_give: Int,
-	hp: Int
-	
+		dmg_to_give: Int,
+		hp: Int
+	;
+		
 	// Constants:
 	let AP = 40
 	let DEF = 20
 	let MAXHP = 50
 	
 	
-	/* Inits: */
+/* Inits: */
 	
-	/// Default init:
-	init(_name: String) { age = 5; name = _name; rockets = 5; lives = 9; dmg_to_give = 0; hp = self.MAXHP; status = "Alive"}
+		/// Default init:
+		init(newCatWithName _name: String) { age = 5; name = _name; rockets = 5; lives = 9; dmg_to_give = 0; hp = self.MAXHP; status = "Alive"}
 	
-	/// Call for FP transformation:
-	init(fromOldCat oc: Cat,
-	                age: Int? = nil,
-	                name: String? = nil,
-	                rockets: Int? = nil,
-	                lives: Int? = nil,
-	                
-	                dmg_to_give: Int? = nil,
-	                hp: Int? = nil,
-	                status: String? = nil) {
-	
-		// Basics:
-		age ==  nil 	 ? 	(self.age = oc.age)   			: (self.age = age!)
-		name == nil 	 ? 	(self.name = oc.name) 			: (self.name = name!)
-		rockets == nil ?	(self.rockets = oc.rockets) : (self.rockets = rockets!)
-		lives == nil 	 ? 	(self.lives = oc.lives) 		: (self.lives = lives!)
-		status == nil  ?	(self.status = oc.status) 	: (self.status = status!)
+		/// Call for FP transformation:
+		init(fromOldCat oc: 				 Cat,
+										age: 				 Int? 	 = nil,
+										name: 			 String? = nil,
+										rockets:		 Int? 	 = nil,
+										lives: 			 Int?		 = nil,
+										status:			 String? = nil,
+										hp: 				 Int?    = nil,
+										dmg_to_give: Int? 	 = nil) {
 		
-		// Battle:
-		hp == nil 	 	 ?  (self.hp = oc.hp) 					:(self.hp = hp!)
-		dmg_to_give == nil ? (self.dmg_to_give = oc.dmg_to_give):(self.dmg_to_give = dmg_to_give!)
-	}
+			// Basics:
+			age 		== nil 	 ? 	(self.age 		= oc.age)   	: (self.age = age!)
+			name 		== nil 	 ? 	(self.name 		= oc.name) 		: (self.name = name!)
+			rockets == nil 	 ?	(self.rockets = oc.rockets) : (self.rockets = rockets!)
+			lives 	== nil 	 ? 	(self.lives 	= oc.lives) 	: (self.lives = lives!)
+			status 	== nil   ?	(self.status 	= oc.status) 	: (self.status = status!)
+			hp 			== nil 	 ?  (self.hp 			= oc.hp) 			:	(self.hp = hp!)
+			
+			// Battle:
+			dmg_to_give == nil ? (self.dmg_to_give = oc.dmg_to_give):(self.dmg_to_give = dmg_to_give!)
+		}
 	
 	
-	/* Methods: */  // NOTE: All methods pass 'self' into parameter implicitly (pseudo-pure).
+/* Methods: */  // NOTE: All methods pass 'self' into parameter implicitly (pseudo-pure).
 	
 	/// Calculates damage to give (from $0's DEF), then stores it in own field:
 	func fireRocket(at victim: Cat) -> Cat {
-		let dmg_to_give2 = (self.AP - victim.DEF)
-		let rockets2 = (self.rockets - 1)
 		
+		// Returners:
+		let dmg_to_give2 = (self.AP - victim.DEF)
+		let rockets2 		 = (self.rockets - 1)
+		
+		// TODO: Add a self.rockets check before firing a rocket
 		return Cat(fromOldCat: self, rockets: rockets2, dmg_to_give: dmg_to_give2)
 	}
 	
@@ -135,12 +148,11 @@ struct Cat {
 	func takeDamage(from attacker: Cat) -> Cat {
 		
 		// Returners:
-		let hp2: Int
-		let lives2: Int
+		let hp2: 		 Int
+		let lives2:  Int
 		let status2: String
 
 		assignmentLogic: do {
-			
 			let dmg_taken = attacker.dmg_to_give
 			let dam_left = (self.hp - dmg_taken)
 			
@@ -160,13 +172,10 @@ struct Cat {
 		return Cat(fromOldCat: self, hp: hp2, lives: lives2, status: status2 )
 	}
 	
-	
+	/// Needs to balled after attacking cat uses a .attack():
 	func readyForNextBattle(/* Uses 'self'*/) -> Cat {
 		return Cat(fromOldCat: self, dmg_to_give: 0, hp: 0)
 	}
-	
-	
-
 } //</cat>
 
 
@@ -188,9 +197,9 @@ struct CatList {
 
 	// Default: (protected):
 	private init(defaults: Int) {
-		fluffy = Cat(_name: Names.fluffy)
-		kitty = Cat(fromOldCat: fluffy, age: 34, name: Names.kitty)
-		boots = Cat(fromOldCat: kitty, name: Names.boots)
+		fluffy = Cat(newCatWithName: 					 Names.fluffy)
+		kitty  = Cat(fromOldCat: fluffy, name: Names.kitty)
+		boots  = Cat(fromOldCat: kitty,  name: Names.boots)
 		
 		uk_cats = []
 	}
