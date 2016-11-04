@@ -1,6 +1,13 @@
 //: Playground - noun: a place where cats can play (with rockets).
 
-/* BATTLE CATS!!
+/* BATTLE CATS!! Fed up with being "cutified," one faction of furry-
+								 friends has decided to destroy all servers and the 
+								 Internet!! 
+
+								 Tech-loving felines across the globe have
+								 taken up arms to protect their fame, fortune, and 
+								 web-based addiction. Choose your side, load up, and
+								 BATTLE WITH CATS!!!
 
 Conventions:
 	
@@ -45,27 +52,30 @@ Methods / Funcs:
 	
 Goal:
 	- To make a single, mutable var 'cat list';
-		this list contains immutable Cat instanaces.
+		this list contains immutable Cat instanaces that can battle one another.
 
 Structs:
-	- Cat instances transform via constructor with
+	- 'Cat' instances transform via constructor with
 		default-parameters; a passed in "Old Cat" pram
-		is used to copy from.
+		is used to copy from. 
+
+		This is a psuedo-oop struct, but with FP principles.
 		
-		All methods use this "Old Cat" to "update" self,
-		via passing in 'self' implicitly,	then returning a 
+		All methods use "Old Cat" pram to "update" self via
+		passing in 'self' implicitly,	then returning a
 		new instance with only the specified	data in the 
 		pram as transformed 
 		
-		All others are copied from "Old Cat" which is usually just 'self'.
+		All non-specified prams will be copied from "Old Cat" automatically.
+		This makes transforming just one value simple and clean via default prams.
 
-	- CatList is to be used as a singleton, but is handled i
+	- 'CatList' is to be used as a singleton, but is handled
 		in a similar way to Cat--but currently CatList
 		has no methods (it is a data structure).
 	
-	- Battle is a static func-struct (no fields),
-		and is used to make updating our CatList instance
-		easier / less verbose.
+	- 'Battle' is not necessary, but was created to make handling CatList and Cat
+		more easily and less verbosely. It is a "static func-struct" (no fields);
+		essentially a "utility class" from Java, etc.
 
 TODO: 
 	- Make more enums (alive, dead, etc)
@@ -77,36 +87,53 @@ TODO:
 	- Remove some of the code from funcs in Battle;
 		they are too simple or only used once.
 	- Figure out a better way to reset a Cat's dmgToGive..
+
+NOTE:
+	- No, I'm wasn't high when I made this (or ever for that matter).
+	- No, I don't wish cats to fight with each other IRL.
+	- Yes, many, MANY, virtual cats were harmed in the making 
+		of this program ;)
 */
 
 
-/** Says meow... OR fires a rocket at your face: */
+
+/** Says meow... Then fires a rocket at your face: */
 struct Cat {
+
+	
+/* Enums: */
+	
+	// TODO: Add enooms for Faction, Status, etc.
+	
 	
 /* Fields: */
 
 	// Transformable:
-	let
-		age: Int,
-		name: String,
-		rockets: Int, // Our kitty is srsbznz... bin' warn3d..
-		lives: Int,
-		status: String,
-
-		dmg_to_give: Int,
-		hp: Int
-	;
-		
+	let	age: 				 Int,
+			name: 			 String,
+			rockets: 		 Int, // Our kitty is srsbznz... bin' warn3d..
+			lives: 			 Int,
+			status: 		 String,
+			hp: 				 Int,
+			dmg_to_give: Int
+	
 	// Constants:
-	let AP = 40
-	let DEF = 20
-	let MAXHP = 50
+	let AP 		= 40,
+		  DEF 	= 20,
+			MAXHP = 50
+	
+	// Name Closures:
+	let meow = { print($0) }
 	
 	
 /* Inits: */
 	
-		/// Default init:
-		init(newCatWithName _name: String) { age = 5; name = _name; rockets = 5; lives = 9; dmg_to_give = 0; hp = self.MAXHP; status = "Alive"}
+		/// Default init for new cat. Use 'init(fromOldCat:)' to transform.
+		init(newCatWithName _name: String) {
+			age = 5; name = _name; rockets = 5; lives = 9; dmg_to_give = 0; hp = self.MAXHP; status = "Alive"
+			
+			meow("  Nyaa! Watashi wa \(self.name) desu~!") // Purrrr...
+		}
 	
 		/// Call for FP transformation:
 		init(fromOldCat oc: 				 Cat,
@@ -128,12 +155,18 @@ struct Cat {
 			
 			// Battle:
 			dmg_to_give == nil ? (self.dmg_to_give = oc.dmg_to_give):(self.dmg_to_give = dmg_to_give!)
+			
+			// New cat purrs...
+			if (self.name != oc.name) { meow("  Nyaa! Watashi wa \(self.name) desu~!") }
 		}
 	
 	
-/* Methods: */  // NOTE: All methods pass 'self' into parameter implicitly (pseudo-pure).
+/* Methods: */  // NOTE: All methods pass 'self' into parameter "implicitly" (pseudo-pure).
 	
-	/// Calculates damage to give (from $0's DEF), then stores it in own field:
+/** Calculates damage to give (from $0's DEF), then stores it in own field:
+	
+	cat1 = cat1.fireRocket(at: cat2)
+*/
 	func fireRocket(at victim: Cat) -> Cat {
 		
 		// Returners:
@@ -143,28 +176,37 @@ struct Cat {
 		// TODO: Add a self.rockets check before firing a rocket
 		return Cat(fromOldCat: self, rockets: rockets2, dmg_to_give: dmg_to_give2)
 	}
-	
-	/// Decreases own HP from value stored in other cat, then updates
+
+
+/** Decreases own HP from value stored in other cat, then updates
+
+	cat2 = cat2.takeDamage(from: cat1)
+*/
 	func takeDamage(from attacker: Cat) -> Cat {
 		
 		// Returners:
-		let hp2: 		 Int
-		let lives2:  Int
-		let status2: String
+		let hp2: 		 Int,
+				lives2:  Int,
+			  status2: String
 
 		assignmentLogic: do {
-			let dmg_taken = attacker.dmg_to_give
-			let dam_left = (self.hp - dmg_taken)
 			
+			// Logic fodder:
+			let dmg_taken = attacker.dmg_to_give
+			let dam_left  = (self.hp - dmg_taken)
+			
+			// Our cat dies:
 			if dam_left <= 0 {
-				hp2 = self.MAXHP
+				hp2 	 = self.MAXHP
 				lives2 = (self.lives - 1)
+				
 				lives2 == 0 ? (status2 = "Dead") : (status2 = "Alive")
 			}
-				
+			
+			// Our cat lives:
 			else {
-				hp2 = dam_left
-				lives2 = self.lives
+				hp2 	  = dam_left
+				lives2  = self.lives
 				status2 = "Alive"
 			}
 		}
@@ -172,11 +214,17 @@ struct Cat {
 		return Cat(fromOldCat: self, hp: hp2, lives: lives2, status: status2 )
 	}
 	
-	/// Needs to balled after attacking cat uses a .attack():
+	
+/** Needs to called after attacking cat uses a .attack().
+	
+	cat1 = cat1.readyForNextBattle()
+*/
 	func readyForNextBattle(/* Uses 'self'*/) -> Cat {
-		return Cat(fromOldCat: self, dmg_to_give: 0, hp: 0)
+		return Cat(fromOldCat: self, dmg_to_give: 0)
 	}
-} //</cat>
+	
+	// End of Cat />
+}
 
 
 /* List of Cats: */
@@ -188,29 +236,27 @@ struct CatList {
 	struct Names { static let fluffy="Fluffy", kitty="Kitty", boots="Boots"}
 	
 	// Known cats:
-	let fluffy: Cat
-	let kitty:  Cat
-	let boots:  Cat
+	let fluffy: Cat,
+			kitty:  Cat,
+			boots:  Cat
 	
-	// Unknown cats (random battles): // TODO: Implement random battles with unnamed cats
+	// Unknown cats (random battles): 											// TODO: Implement random battles with unnamed cats
 	let uk_cats: [Cat]
 
 	// Default: (protected):
 	private init(defaults: Int) {
-		fluffy = Cat(newCatWithName: 					 Names.fluffy)
-		kitty  = Cat(fromOldCat: fluffy, name: Names.kitty)
-		boots  = Cat(fromOldCat: kitty,  name: Names.boots)
+		fluffy = Cat( newCatWithName: 				  Names.fluffy )
+		kitty  = Cat( fromOldCat: fluffy, name: Names.kitty  )
+		boots  = Cat( fromOldCat: kitty , name: Names.boots  )
 		
-		uk_cats = []
+		uk_cats = [] 																					// TODO: Something with this..
 	}
 	
 	// Add named cats here:
 	init(ol: CatList, fluffy: Cat? = nil, kitty: Cat? = nil, boots: Cat? = nil, uk_cats: [Cat]? = nil) {
-		// Inits:
-	
-		fluffy == nil  ? (self.fluffy = ol.fluffy)   : (self.fluffy = fluffy!)
-		kitty == nil   ? (self.kitty = ol.kitty)  	 : (self.kitty = kitty!)
-		boots == nil   ? (self.boots = ol.boots)  	 : (self.boots = boots!)
+		fluffy  == nil ? (self.fluffy  = ol.fluffy)  : (self.fluffy  = fluffy! )
+		kitty   == nil ? (self.kitty   = ol.kitty) 	 : (self.kitty   = kitty!  )
+		boots   == nil ? (self.boots   = ol.boots)   : (self.boots   = boots!  )
 		uk_cats == nil ? (self.uk_cats = ol.uk_cats) : (self.uk_cats = uk_cats!)
 	}
 }
@@ -219,7 +265,7 @@ struct CatList {
 /* GLOBAL: */
 
 /// Instance to pass around:
-var gCatList = CatList(defaults: 1)
+var gCatList: CatList
 
 
 /* Combat funk */
@@ -230,8 +276,10 @@ var gCatList = CatList(defaults: 1)
 */
 struct Battle {
 	
+	
 	/// 1v1 Combatants:
 	typealias Combatants = (attacker: Cat, victim: Cat)
+	
 	
 	/// Makes doCombat (defined next) more Englishy / fun, by pairing an enum to a 1v1 Cat.method()
 	enum Attacks {
@@ -248,22 +296,36 @@ struct Battle {
 		}
 	}
 	
-	/// Returns two new cats after battling.. Use them to update your CatList:
+	
+/** Returns two new cats after battling.. Use them to update your CatList:
+	
+		results = doCombat()
+*/
 	private static func doCombat(attacker: Cat, _ const: Attacks, at victim: Cat) -> Combatants {
 		
-		// New funcs that make a new Cat each:
-		let attacked = const.becomeFunc((attacker, victim))
-		let victimized = { victim.takeDamage(from: attacked()) }
+		// New func that make a new Cat:
+		let attacker2: ()->(Cat) = const.becomeFunc((attacker, victim))
 		
-		return (attacker: attacked(), victim: victimized())
+		// Returners
+		let that_attacked:		   Cat = attacker2().readyForNextBattle()
+		let that_was_victimized: Cat = victim.takeDamage(from: attacker2())
+		
+		return (attacker: that_attacked, victim: that_was_victimized)
 	}
 	
-	/// Mutates our gCatList automagically with the battle results:
-	private static func handleResults(battled_cats battled_cats: Combatants, fromInitial list: CatList)	-> CatList {
+	
+/** Mutates our gCatList automagically with the battle results:
+
+		updated_cat_list = handleResults()
+*/
+	private static func handleResults(battled_cats battled_cats: Combatants,
+																	 fromInitial   list:				 CatList)
+		-> CatList {
 		
 		// Returner method:
-		func matchName(this_cat: (name: String, is_attacker: Bool),
-		               updateFrom list2: CatList)
+		func matchName(this_cat:			  (name: String, is_attacker: Bool),
+		               updateFrom list2: CatList
+								/* battled_cats:	   Combatants */)
 			-> CatList {
 				
 				// Returner:
@@ -276,61 +338,107 @@ struct Battle {
 				// Logic2:
 				typealias n=CatList.Names
 				switch this_cat.name {
-					case n.boots:  return CatList (ol: list2, boots: new_cat)
+					case n.boots:  return CatList (ol: list2, boots:  new_cat)
 					case n.fluffy: return CatList (ol: list2, fluffy: new_cat)
-					case n.kitty:  return CatList (ol: list2, kitty: new_cat)
-						
-					// Induce crash:
-					default: print("error cant find cat"); let error: CatList? = nil; return error!
+					case n.kitty:  return CatList (ol: list2, kitty:  new_cat)
+					default: fatalError("cant find cat's name. Should use an Enum")
 				}
 		}
 		
-		//	matchName(results.attacker.name, is_attacker: true, list2: list).boots.damage_to_give
+		// Returners:
 		let attacker2 = (name: battled_cats.attacker.name, is_attacker: true)
-		let victim2 	=	(name: battled_cats.victim.name, 	 is_attacker: false)
-		
-		// Attacker must present dmg_to_give to victim (takeDamage())--attacker must be processed first (on the right)
+		let victim2 	=	(name: battled_cats.victim.name  , is_attacker: false)
+			
+		// Attacker must present 'dmg_to_give' to victim;
+		// therefore, attacker must be processed first (on the right):
 		return matchName( victim2, updateFrom: (matchName(attacker2, updateFrom: list)) )
 	}
 	
-/** Brings it all together (in reverse order):
-		
-		gCatList = (start ->  handleResults -> doCombat)
+	
+/** Brings all private funcs together (in reverse order):
+	
+#### usage:
+		gCatList = (start -> handleResults -> doCombat)
+
+- NOTE:
+ Reads from global in default pram for convenience (no mutate):
 */
-	internal static func start(combatants: Combatants, initialList gcat_list: CatList = gCatList) -> CatList {
-		let attacker = combatants.attacker
-		let victim = combatants.victim
-		return handleResults(battled_cats: doCombat(attacker, .fires1Rocket, at: victim), fromInitial: gcat_list)
+	internal static func start(combatants: 						Combatants,
+	                           initialList gcat_list: CatList = gCatList)
+		-> CatList {
+		
+			let attacker = combatants.attacker
+			let victim 	 = combatants.victim
+		
+			return handleResults(battled_cats: doCombat(attacker, .fires1Rocket, at: victim), fromInitial: gcat_list)
 	}
 }
+
+
+/* TESTING: */
 
 // Makes transformation more obvious than '=' operator.. lhs 'does' rhs (transforms into):
 infix operator ->>{}; func ->> <T> (inout l: T, r: T) { l = r }
 
-// MARK: TESTING 2:
-aBattleTest: do {
+
+// Tests 1 - 4. Nyan and Fluffy are the Victims:
+aBattleTests: do {
 	
-	// For testing purposes:
-	var boots2 = gCatList.boots, fluffy2 = gCatList.fluffy
+	let victim_hp = "Victim's HP after battle (should be 30): "
+	let assertHP30 = { assert(gCatList.fluffy.hp == 30, "Failed") }
 	
-	// Very verbose way:
-	boots2->>boots2.fireRocket(at: fluffy2)
-	fluffy2->>fluffy2.takeDamage(from: boots2)
+	test1: do {
+		
+		// Without 'Battle' or 'CatList': 3+SLOC vs 1SLOC for tests 2-4
+		print("Test1: No Battle struct or CatList struct:")
+		var mittens = Cat(newCatWithName: "Mittens")
+		var nyan		= Cat(newCatWithName: "Nyan")
+		
+		mittens->>mittens.fireRocket(at: nyan)
+		nyan->>nyan.takeDamage(from: mittens)
+		mittens->>mittens.readyForNextBattle()
+		
+		assert(nyan.hp == 30, "Failed")
+		print(victim_hp, nyan.hp, "\n")
+	}
 	
-	// Verbose way:
-	let test_attacker = gCatList.boots
-	let test_victim = gCatList.fluffy
-	let between_combatants = (test_attacker, test_victim)
-	gCatList = Battle.start(between_combatants)
+	test2: do {
+		
+		// Most verbose way (but has most clarity / readability):
+		print("Test2: Verbose Battle Struct:")
+		gCatList = CatList(defaults: 1)
+		
+		let test_attacker 		 = gCatList.boots
+		let test_victim 			 = gCatList.fluffy
+		let between_combatants = (test_attacker, test_victim)
+		gCatList->>Battle.start(between_combatants)
+		
+		assertHP30()
+		print(victim_hp, gCatList.fluffy.hp, "\n")
+	}
 	
-	// Non-verbose way:
-	gCatList = Battle.start((attacker: gCatList.boots, victim: gCatList.fluffy))
+	test3: do {
+		
+		// Verbose way:
+		print("Test3: ")
+		gCatList = CatList(defaults: 1)
+		gCatList->>Battle.start((attacker: gCatList.boots, victim: gCatList.fluffy))
+		
+		assertHP30()
+		print(victim_hp, gCatList.fluffy.hp, "\n")
+	}
 	
-	// Super non-verbose way:
-	gCatList = Battle.start((gCatList.boots, gCatList.fluffy))
+	test4: do	{
+		
+		// Least verbose way: (force error)
+		print("Test4: Assertion Failure:")
+		gCatList = CatList(defaults: 0)
+		gCatList->>Battle.start((gCatList.boots, gCatList.boots))
+		
+		assertHP30()
+		print(victim_hp, gCatList.fluffy.hp, "\n")
+	}
 	
-	// Working:
-	print(gCatList.fluffy.lives)
 }
 
 
