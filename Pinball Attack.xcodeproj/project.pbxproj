@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C102282C1DCC88AB00229084 /* BattleCats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102282B1DCC88AB00229084 /* BattleCats.swift */; };
 		C1FC9CE11DC840A400213E05 /* rocket test.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FC9CE01DC840A400213E05 /* rocket test.sks */; };
 		C1FC9CE31DC84ACB00213E05 /* MyActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FC9CE21DC84ACB00213E05 /* MyActions.sks */; };
 		C1FD9EF31DC2E97C00D133B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD9EF21DC2E97C00D133B0 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C102282B1DCC88AB00229084 /* BattleCats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleCats.swift; sourceTree = "<group>"; };
 		C188222C1DC5C21D002E41AF /* pinballplayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = pinballplayground.playground; path = "/Users/dudeguy/Dropbox/Shared Desktop/Pinball Attack/Pinball Attack/pinballplayground.playground"; sourceTree = "<absolute>"; };
 		C1FC9CE01DC840A400213E05 /* rocket test.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "rocket test.sks"; sourceTree = "<group>"; };
 		C1FC9CE21DC84ACB00213E05 /* MyActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MyActions.sks; path = "Pinball Attack/Assets.xcassets/MyActions.sks"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				C1FC9CE01DC840A400213E05 /* rocket test.sks */,
 				C1FD9F081DC2E99400D133B0 /* empty.swift */,
 				C1FD9F0A1DC2E9A900D133B0 /* Config.swift */,
+				C102282B1DCC88AB00229084 /* BattleCats.swift */,
 				C1FF1A461DC6ED9500296EF7 /* Global.swift */,
 				C1FD9EF61DC2E97C00D133B0 /* GameScene.swift */,
 				C1FD9EF81DC2E97C00D133B0 /* GameViewController.swift */,
@@ -166,6 +169,7 @@
 				C1FF1A471DC6ED9500296EF7 /* Global.swift in Sources */,
 				C1FD9EF91DC2E97C00D133B0 /* GameViewController.swift in Sources */,
 				C1FD9F0B1DC2E9A900D133B0 /* Config.swift in Sources */,
+				C102282C1DCC88AB00229084 /* BattleCats.swift in Sources */,
 				C1FD9EF31DC2E97C00D133B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
