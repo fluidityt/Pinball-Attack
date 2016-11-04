@@ -1,13 +1,12 @@
 //: Playground - noun: a place where cats can play (with rockets).
 
 /* BATTLE CATS!! Fed up with being "cutified," one faction of furry-
-								 friends has decided to destroy all servers and the 
-								 Internet!! 
-
-								 Tech-loving felines across the globe have
-								 taken up arms to protect their fame, fortune, and 
-								 web-based addiction. Choose your side, load up, and
-								 BATTLE WITH CATS!!!
+   friends has decided to destroy all servers and the  Internet!! 
+							
+   Tech-loving felines across the globe have
+   taken up arms to protect their fame, fortune, and 
+   web-based addiction. Choose your side, load up, and
+   BATTLE WITH CATS!!!
 
 Conventions:
 	
@@ -114,7 +113,7 @@ struct Cat {
 			rockets: 		 Int, // Our kitty is srsbznz... bin' warn3d..
 			lives: 			 Int,
 			status: 		 String,
-			hp: 				 Int,
+			hp: 			   Int,
 			dmg_to_give: Int
 	
 	// Constants:
@@ -440,7 +439,6 @@ aBattleTests: do {
 		assertHP30()
 		print(victim_hp, gCatList.fluffy.hp, "\n")
 	}
-	
 }
 
 
